@@ -1,0 +1,17 @@
+extends templates/template.jade
+
+block variables
+	- var page_class = "index"
+	
+block prepend links
+
+block pixel-glass-templates
+	//- include ../../pixel-glass-teplates/index-lg.html
+
+block page
+	include pages/index/content.jade
+
+
+
+block prepend bottom-scripts
+	

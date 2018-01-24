@@ -1,0 +1,25 @@
+extends template.jade
+
+block variables
+	- var page_heading_titile
+	- var breadcrumb_chain
+
+block prepend links 
+
+block pixel-glass-templates
+
+block page
+	+breadcrumb(breadcrumb_chain)
+	
+	.container
+		block heading_titile
+			
+		.row.content-wrap
+			
+			.col-lg-3.col-left
+				block sidebar
+			.col-lg-9.col-center
+				block content
+
+
+block prepend bottom-scripts

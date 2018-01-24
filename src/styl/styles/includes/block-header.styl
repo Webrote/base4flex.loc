@@ -1,0 +1,17 @@
+.header
+	position relative
+	
+	&__inline
+		display inline-block
+		vertical-align middle
+	
+	&__b
+		display block
+		
+	&__burger
+		absolute top 50% right 0
+		transform translateY(-50%) 
+		
+		
+		@media screen and (min-width $grid-float-breakpoint)
+			display none

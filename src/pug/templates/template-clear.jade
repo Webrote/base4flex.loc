@@ -1,0 +1,42 @@
+//- Логотип Р52
+
+include ../mixins/mixins.jade
+
+block variables
+	- var page_heading_titile // заголовок страницы
+	- var breadcrumb_chain // Массив с хлебными крошками
+	- var page_class
+	
+doctype html
+html
+	head(lang="ru")
+		meta(name="robots", content="noindex, nofollow")
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes")
+		block title
+			title Title
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		
+
+		block links
+			link(href="css/main.css", rel="stylesheet")
+		
+		//- Api Map Yandex including
+		//- <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+
+		block pixel-glass-templates
+			
+	body
+		.page(class= (page_class))
+
+			block page
+
+
+		//- Scripts on the bottom of page
+		script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
+		
+		block bottom-scripts
+			script(type="text/javascript", src="js/scripts.js")

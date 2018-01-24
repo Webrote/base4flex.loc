@@ -1,0 +1,13 @@
+mixin breadcrumb(chain)
+	.container
+		.breadcrumb
+			each item, index in chain
+				if index !== chain.length - 1
+					.breadcrumb__inline(itemscope, itemtype="http://data-vocabulary.org/Breadcrumb")
+						a(href="", itemprop="url")
+							span(itemprop="title") #{item}
+					span.breadcrumb__delimiter.i-right-arrow
+
+				else
+					.breadcrumb__inline(itemscope, itemtype="http://data-vocabulary.org/Breadcrumb")
+						span(itemprop="title") #{item}

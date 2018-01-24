@@ -1,0 +1,12 @@
+.page
+	background-color transparent
+	min-height auto
+	
+	@media screen and (min-width $screen-xs-min)
+		min-height 100%
+	
+	&:after
+		@media screen and (min-width $screen-xs-min)
+			content "" 
+			display block
+			padding-bottom 100px

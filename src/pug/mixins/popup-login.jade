@@ -1,0 +1,13 @@
+mixin login()
+	.popup.popup__login.login
+		.popup__close.i-close
+		.login__title Авторизация
+		form.form(action="")
+			.form__group
+				input.form__control(type="text", placeholder="Логин")
+			.form__group
+				input.form__control(type="password", placeholder="Пароль")
+			input(type="submit", value="Войти")
+
+		a.login__recovery(href="") Забывали пароль?
+		a.login__registration(href="/registration.html") Регистрация

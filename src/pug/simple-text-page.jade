@@ -1,0 +1,20 @@
+extends templates/template-one-column.jade
+
+block variables
+	- var body_class = ""
+	- var page_heading_titile = ''
+	- var breadcrumb_chain = ["Главная", "Текстовая страница"] 
+
+block prepend links
+
+block pixel-glass-templates
+	//- include ../../pixel-glass-teplates/index-lg.html
+
+block heading_titile
+	h1 #{page_heading_titile}
+	
+block content
+	include includes/pages/simple-text/content.jade
+
+
+block prepend bottom-scripts

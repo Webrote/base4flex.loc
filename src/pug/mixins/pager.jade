@@ -1,0 +1,25 @@
+mixin pager()
+	.pager-wrap
+		ul.pager
+			li.pager-previous.first
+				a(href="",title="На предыдущую страницу") Назад
+			li.pager-first
+				a(href="",title="На первую страницу") 1
+			//- li.pager-ellipsis 
+			//- 	span …
+			li.pager-item
+				a(href="",title="На страницу номер 3") 3
+			li.pager-item
+				a(href="",title="На страницу номер 4") 4
+			li.pager-item
+				a(href="",title="На страницу номер 5") 5
+			li.pager-item
+				a(href="",title="На страницу номер 6") 6
+			li.pager-current
+				span 7
+			li.pager-ellipsis 
+				span …
+			li.pager-last.last
+				a(href="",title="На последнюю страницу") 20
+			li.pager-next
+				a(href="",title="На следующую страницу") Вперед

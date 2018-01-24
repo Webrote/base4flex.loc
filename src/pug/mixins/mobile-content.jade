@@ -1,0 +1,31 @@
+mixin mobile-content()
+	.mobile-cont.mobile-cont_js
+		.mobile-cont__close
+			span
+			span
+				
+		//- .mobile-cont__logo
+		//- 	a.logo(href="/")
+		//- 		img(src="img/stuff/logo.png", alt="")
+		
+		+menu("menu__mobile",true)
+		//- nav.menu__mobile
+		//- 	ul
+		//- 		li
+		//- 			a(href="/") главная
+		//- 		li
+		//- 			a.active(href="/about.html") о компании 
+		//- 		li
+		//- 			a(href="/catalog.html") Каталог
+		//- 		li
+		//- 			a(href="/news-list.html") Новости
+		//- 		li
+		//- 			a(href="/career.html") Карьера
+		//- 		li
+		//- 			a(href="/partners.html") Партнеры
+		//- 		li
+		//- 			a(href="/contacts.html") Контакты
+		
+		.mobile-cont__phone
+			i.i-phone.mobile-cont__phone-icon
+			a.phone__mobile(href="tel:+78004352356") +7 800 435 23 56

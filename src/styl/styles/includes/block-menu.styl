@@ -1,0 +1,29 @@
+.menu
+	ul
+		li
+			padding 5px 10px
+			display inline-block
+			
+			a
+				display block
+			
+
+	@media screen and (max-width $grid-float-breakpoint)
+		display none
+		
+	// Мобильное меню
+	&__mobile
+		ul
+			li
+				display block
+				margin-bottom 5px
+				
+				a
+					display inline-block
+					
+					&:hover
+					&:focus
+						text-decoration none
+					
+					&.active
+						border-bottom 2px solid #639D38 

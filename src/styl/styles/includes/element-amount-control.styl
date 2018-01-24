@@ -1,0 +1,88 @@
+// Увеличение/уменьшение количества товара
+.amount-controler
+	position relative
+	box-shadow 0 3px 10px 0 rgba(#000,0.1)
+	blue-gradient-bg()
+	
+	&.in_cart
+		@media screen and (max-width $screen-xs-max)
+			width 44px
+			height 90px
+			border-radius 10px 
+		@media screen and (min-width $screen-sm-min)
+			height 34px
+			width 110px
+			border-radius 50px 
+	
+	&.in_card
+		height 34px
+		width 110px
+		border-radius 50px 
+	
+	& > *
+		position absolute
+		
+	&__minus
+	&__plus
+		color #FFF
+		font-size 16px
+		transit(,150ms)
+		&:hover
+		&:focus
+			color darken(@color, 20) 
+			text-decoration none
+		
+		.in_cart &
+			@media screen and (max-width $screen-xs-max)
+				left 50%
+				transform translateX(-50%) 
+			@media screen and (min-width $screen-sm-min)
+				top 3px 
+		
+		.in_card &
+			top 3px 
+		
+	&__minus
+		.in_cart &
+			@media screen and (max-width $screen-xs-max)
+				bottom 5px
+			@media screen and (min-width $screen-sm-min)
+				left 10px 
+		.in_card &
+			left 10px 
+			
+	&__plus
+		.in_cart &
+			@media screen and (max-width $screen-xs-max)
+				top 5px
+			@media screen and (min-width $screen-sm-min)
+				right 10px
+		.in_card &
+			right 10px
+		
+		
+	&__amount
+		width 40px
+		height 30px
+		background-color #FFF 
+		padding 0 2px
+		color #333
+		font-size 22px
+		font-weight 600 
+		text-align center
+		
+		.in_cart &
+			@media screen and (max-width $screen-xs-max)
+				top 50% 
+				left 2px
+				transform translateY(-50%) 
+			
+			@media screen and (min-width $screen-sm-min)
+				top 2px
+				left 50% 
+				transform translateX(-50%) 
+			
+		.in_card &
+			top 2px
+			left 50% 
+			transform translateX(-50%) 

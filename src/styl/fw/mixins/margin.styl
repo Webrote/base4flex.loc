@@ -1,0 +1,14 @@
+margin-block(top_margin = 0, bottom_margin)
+	margin-top top_margin * 0.5
+	margin-bottom bottom_margin * 0.5
+	
+	@media screen and (min-width $screen-sm-min)
+		margin-top top_margin 
+		margin-bottom bottom_margin
+
+			
+.margin-block-b
+	margin-block(, 40px)
+	
+.margin-block-b-t
+	margin-block(30px, 40px)
