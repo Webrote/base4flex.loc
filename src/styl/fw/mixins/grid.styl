@@ -4,3 +4,23 @@ make-container()
 	padding-left: ($grid-gutter-width / 2);
 	margin-right: auto;
 	margin-left: auto;
+	
+make-container-max-widths()
+	@media (min-width: $screen-sm-min)
+			max-width: $container-sm
+			 
+	@media (min-width: $screen-md-min) 
+		max-width: $container-md
+
+	@media (min-width: $screen-lg-min)
+		max-width: $container-lg
+		
+	@media (min-width: $screen-xl-min)
+		max-width: $container-xl
+		
+
+make-row()
+	display flex
+	flex-wrap wrap
+	margin-right ($grid-gutter-width / -2)
+	margin-left ($grid-gutter-width / -2)
