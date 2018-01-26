@@ -11,8 +11,8 @@ make-grid-columns($gutter = $grid-gutter-width)
 		// padding-left ($gutter / 2)
 		
 	for $breakpoint, $i in $grid-breakpoints
-		// $infix = breakpoint-infix($breakpoint)
-		.col-{keys($breakpoin)t}-{$i}
+		$infix = keys($grid-breakpoints)
+		.col-{$breakpoint}-{$i}
 			@extend $grid-column
 			
 	// for $index in 1..2
