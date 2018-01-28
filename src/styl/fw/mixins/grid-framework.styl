@@ -1,20 +1,52 @@
-breakpoint-infix()
-	
-
-
-make-grid-columns($gutter = $grid-gutter-width)
+make-grid-columns($columns = $grid-columns, $gutter = $grid-gutter-width, $breakpoints = $grid-breakpoints)
 	$grid-column
 		position relative
-		// width 100%
-		// min-height 1px // Prevent columns from collapsing when empty
-		// padding-right ($gutter / 2)
-		// padding-left ($gutter / 2)
+		width 100%
+		min-height 1px // Prevent columns from collapsing when empty
+		padding-right ($gutter / 2)
+		padding-left ($gutter / 2)
 		
-	for $breakpoint, $i in $grid-breakpoints
-		$infix = keys($grid-breakpoints)
-		.col-{$breakpoint}-{$i}
+	for $breakpoint in keys($grid-breakpoints)
+		
+		$infix = breakpoint-infix($breakpoint, $grid-breakpoints)
+		
+		for $i in (1..$columns)
+			.col{$infix}-{$i}
+				@extend $grid-column
+				
+		.col{$infix},
+		.col{$infix}-auto
 			@extend $grid-column
 			
-	// for $index in 1..2
-	// 	.col-{$index}, .col-xs-{$index}, .col-ssm-{$index}, .col-sm-{$index}, .col-md-{$index}, .col-lg-{$index}
-	// 		@extend $grid-column
+
+		+media-breakpoint-up($breakpoint, $breakpoints)
+			// Provide basic `.col-{bp}` classes for equal-width flexbox columns
+			.col{$infix}
+				flex-basis 0
+				flex-grow 1
+				max-width 100%
+				
+			.col{$infix}-auto
+				flex 0 0 auto
+				width auto
+				max-width none // Reset earlier grid tiers
+				
+			for $i in (1..$columns)
+				.col{$infix}-{$i}
+					make-col($i, $columns)
+			
+			.order{$infix}-first 
+				order -1
+
+			.order{$infix}-last 
+				order $columns + 1
+				
+			for $i in (0..$columns)
+				.order{$infix}-{$i}
+					order $i
+					
+			// `$columns - 1` because offsetting by the width of an entire row isn't possible
+			for $i in (0...$columns)
+				if not (($infix == "") and ($i == 0)) // Avoid emitting useless .offset-0
+					.offset{$infix}-{$i}
+						make-col-offset($i, $columns)

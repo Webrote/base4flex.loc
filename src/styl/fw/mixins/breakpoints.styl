@@ -1,0 +1,34 @@
+// Returns the value in a map associated with the given key.
+// If the map doesn't have such a key, returns null.
+map-get(hash, key)
+    return val if keys == key for keys, val in hash
+
+// Minimum breakpoint width. Null for the smallest (first) breakpoint.
+//
+//    >> breakpoint-min(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+//    576px
+breakpoint-min($name, $breakpoints = $grid-breakpoints)
+	$min = map-get($breakpoints, $name)
+	// console.log($min)
+	return $min != 0 ? $min : null
+
+// Returns a blank string if smallest breakpoint, otherwise returns the name with a dash infront.
+// Useful for making responsive utilities.
+//
+//    >> breakpoint-infix(xs, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+//    ""  (Returns a blank string)
+//    >> breakpoint-infix(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+//    "-sm"
+breakpoint-infix($name, $breakpoints = $grid-breakpoints)
+	return breakpoint-min($name, $breakpoints) == null ? "" : "-" + $name
+	
+
+media-breakpoint-up($name, $breakpoints = $grid-breakpoints)
+	$min = breakpoint-min($name, $breakpoints)
+	if $min 
+		@media (min-width: $min)
+			{block}
+			
+	else
+		{block}
+ 
