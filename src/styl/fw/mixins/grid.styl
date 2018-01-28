@@ -9,19 +9,25 @@ make-container()
 	margin-right: auto;
 	margin-left: auto;
 	
-make-container-max-widths()
-	@media (min-width: $screen-sm-min)
-			max-width: $container-sm
+// make-container-max-widths()
+// 	@media (min-width: $screen-sm-min)
+// 		max-width: $container-sm
 			 
-	@media (min-width: $screen-md-min) 
-		max-width: $container-md
+// 	@media (min-width: $screen-md-min) 
+// 		max-width: $container-md
 
-	@media (min-width: $screen-lg-min)
-		max-width: $container-lg
+// 	@media (min-width: $screen-lg-min)
+// 		max-width: $container-lg
 		
-	@media (min-width: $screen-xl-min)
-		max-width: $container-xl
-		
+// 	@media (min-width: $screen-xl-min)
+// 		max-width: $container-xl
+
+
+make-container-max-widths($max-widths = $container-max-widths, $breakpoints = $grid-breakpoints)
+	for $breakpoint, $container-max-width in $max-widths
+		+media-breakpoint-up($breakpoint, $breakpoints)
+			max-width $container-max-width
+	
 
 make-row()
 	display flex
@@ -29,6 +35,18 @@ make-row()
 	margin-right ($grid-gutter-width / -2)
 	margin-left ($grid-gutter-width / -2)
 	
+	
+make-col-ready()
+	position relative
+	// Prevent columns from becoming too narrow when at smaller grid tiers by
+	// always setting `width: 100%;`. This works because we use `flex` values
+	// later on to override this initial width.
+	width 100%
+	min-height 1px // Prevent collapsing
+	padding-right ($grid-gutter-width / 2)
+	padding-left ($grid-gutter-width / 2)
+
+
 make-col($size, $columns = $grid-columns) 
 	flex 0 0 percentage($size / $columns)
 	// Add a `max-width` to ensure content within each column does not blow out
