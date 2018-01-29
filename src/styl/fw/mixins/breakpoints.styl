@@ -91,10 +91,10 @@ media-breakpoint-between($lower, $upper, $breakpoints = $grid-breakpoints)
 			{block}
 			
 	else if $max == null
-		media-breakpoint-up($lower, $breakpoints)
+		+media-breakpoint-up($lower, $breakpoints)
 			{block}
 	else if $min == null
-		media-breakpoint-down($upper, $breakpoints)
+		+media-breakpoint-down($upper, $breakpoints)
 			{block}
 			
 
@@ -109,8 +109,8 @@ media-breakpoint-only($name, $breakpoints = $grid-breakpoints)
 		@media (min-width: $min) and (max-width: $max)
 			{block}
 	else if $max == null
-		media-breakpoint-up($name, $breakpoints)
+		+media-breakpoint-up($name, $breakpoints)
 			{block}
 	else if $min == null
-		media-breakpoint-down($name, $breakpoints)
+		+media-breakpoint-down($name, $breakpoints)
 			{block}

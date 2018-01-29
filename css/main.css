@@ -8,6 +8,11 @@
 *:focus {
   outline: none;
 }
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+}
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -1856,12 +1861,12 @@ pre code {
   background-color: transparent;
   min-height: auto;
 }
-@media screen and (min-width: 0) {
+@media (min-width: 576px) {
   .page {
     min-height: 100%;
   }
 }
-@media screen and (min-width: 0) {
+@media (min-width: 576px) {
   .page:after {
     content: "";
     display: block;
@@ -1896,7 +1901,7 @@ pre code {
   padding-top: 25px;
   background-color: #232629;
 }
-@media screen and (min-width: 0) {
+@media (min-width: 576px) {
   .footer {
     height: 100px;
     margin-top: -100px;
@@ -2033,4 +2038,8 @@ pre code {
 }
 .menu__mobile ul li a.active {
   border-bottom: 2px solid #639d38;
+}
+.test-col {
+  background-color: #ccc;
+  margin-bottom: 10px;
 }

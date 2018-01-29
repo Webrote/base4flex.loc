@@ -2,11 +2,11 @@
 	background-color transparent
 	min-height auto
 	
-	@media screen and (min-width $screen-xs-min)
+	+media-breakpoint-up(sm)
 		min-height 100%
 	
 	&:after
-		@media screen and (min-width $screen-xs-min)
+		+media-breakpoint-up(sm)
 			content "" 
 			display block
 			padding-bottom 100px
