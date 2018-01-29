@@ -2034,8 +2034,3 @@ pre code {
 .menu__mobile ul li a.active {
   border-bottom: 2px solid #639d38;
 }
-@media (min-width: 576px) {
-  .test {
-    padding: 10px;
-  }
-}

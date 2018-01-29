@@ -1,7 +1,7 @@
 // Returns the value in a map associated with the given key.
 // If the map doesn't have such a key, returns null.
 map-get(hash, key)
-    return val if keys == key for keys, val in hash
+    return vals if keys == key for keys, vals in hash
 
 // Breakpoint viewport sizes and media queries.
 //
@@ -22,7 +22,7 @@ map-get(hash, key)
 
 breakpoint-next($name, $breakpoints = $grid-breakpoints, $breakpoint-names = keys($breakpoints))
 	$n = index($breakpoint-names, $name)
-	return $n < length($breakpoint-names) - 1 ? nth($breakpoint-names, $n + 1) : null
+	return $n < length($breakpoint-names) - 1 ? $breakpoint-names[$n + 1] : null
 
 
 // Minimum breakpoint width. Null for the smallest (first) breakpoint.
@@ -78,3 +78,39 @@ media-breakpoint-down($name, $breakpoints = $grid-breakpoints)
 			{block}
 	else
 		{block}
+		
+
+// Media that spans multiple breakpoint widths.
+// Makes the @content apply between the min and max breakpoints
+media-breakpoint-between($lower, $upper, $breakpoints = $grid-breakpoints)
+	$min = breakpoint-min($lower, $breakpoints)
+	$max = breakpoint-max($upper, $breakpoints)
+
+	if ($min != null) and ($max != null)
+		@media (min-width: $min) and (max-width: $max) 
+			{block}
+			
+	else if $max == null
+		media-breakpoint-up($lower, $breakpoints)
+			{block}
+	else if $min == null
+		media-breakpoint-down($upper, $breakpoints)
+			{block}
+			
+
+// Media between the breakpoint's minimum and maximum widths.
+// No minimum for the smallest breakpoint, and no maximum for the largest one.
+// Makes the @content apply only to the given breakpoint, not viewports any wider or narrower.
+media-breakpoint-only($name, $breakpoints = $grid-breakpoints) 
+	$min = breakpoint-min($name, $breakpoints)
+	$max = breakpoint-max($name, $breakpoints)
+
+	if ($min != null) and ($max != null)
+		@media (min-width: $min) and (max-width: $max)
+			{block}
+	else if $max == null
+		media-breakpoint-up($name, $breakpoints)
+			{block}
+	else if $min == null
+		media-breakpoint-down($name, $breakpoints)
+			{block}
