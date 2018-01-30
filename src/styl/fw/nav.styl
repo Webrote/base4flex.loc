@@ -1,0 +1,23 @@
+.nav
+	& ul
+		list-style-type none
+		margin-bottom 0
+		padding-left 0
+				
+	&__drop
+		li
+			display block !important
+	
+	&__has-child
+		position relative
+		
+	&__has-child:hover ^[0]__drop
+		display block
+
+	@media screen and (min-width $grid-float-breakpoint)
+		&__drop
+			display none
+			absolute top 100% left 0
+			background #FFF 
+			border 1px solid #ccc
+			width 200px

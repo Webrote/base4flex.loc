@@ -1,5 +1,6 @@
 .fw-example
 	.container
+		h3 How it works
 		.row
 			.col
 				|col
@@ -21,7 +22,16 @@
 
 
 	.container
+		h3 Auto-layout columns
+		p Utilize breakpoint-specific column classes for easy column sizing without an explicit numbered class like 
+			code .col-sm-6
+			|.
 		h3 Equal-width
+		p For example, here are two grid layouts that apply to every device and viewport, from 
+			code xs
+			|to 
+			code xl
+			|. Add any number of unit-less classes for each breakpoint you need and every column will be the same width.
 		.row
 			.col
 				|1 of 2
@@ -41,28 +51,22 @@
 				code.
 					&lt;div class="container"&gt;
 						&lt;div class="row"&gt;
-							&lt;div class="col"&gt;
-								1 of 2
-							&lt;/div&gt;
-							&lt;div class="col"&gt;
-								2 of 2
-							&lt;/div&gt;
+							&lt;div class="col"&gt;1 of 2&lt;/div&gt;
+							&lt;div class="col"&gt;2 of 2&lt;/div&gt;
 						&lt;/div&gt;
 						&lt;div class="row"&gt;
-							&lt;div class="col"&gt;
-								1 of 3
-							&lt;/div&gt;
-							&lt;div class="col"&gt;
-								2 of 3
-							&lt;/div&gt;
-							&lt;div class="col"&gt;
-								3 of 3
-							&lt;/div&gt;
+							&lt;div class="col"&gt;1 of 3&lt;/div&gt;
+							&lt;div class="col"&gt;2 of 3&lt;/div&gt;
+							&lt;div class="col"&gt;3 of 3&lt;/div&gt;
 						&lt;/div&gt;
 					&lt;/div&gt;
 
-	.container
-		h3 Multiple lines
+		p Equal-width columns can be broken into multiple lines, but there was a Safari flexbox bug that prevented this from working without an explicit 
+			code flex-basis
+			| or 
+			code border
+			|. There are workarounds for older browser versions, but they shouldn’t be necessary if you’re up-to-date.
+
 		.row
 			.col
 				|Column
@@ -85,4 +89,243 @@
 							&lt;div class="col"&gt;Column&lt;/div&gt;
 							&lt;div class="col"&gt;Column&lt;/div&gt;
 						&lt;/div&gt;
+					&lt;/div&gt;
+
+	.container
+		h3 Setting one column width
+		p Auto-layout for flexbox grid columns also means you can set the width of one column and have the sibling columns automatically resize around it. You may use predefined grid classes (as shown below), grid mixins, or inline widths. Note that the other columns will resize no matter the width of the center column.
+		.row
+			.col
+				|1 of 3
+			.col-6
+				|2 of 3 (wider)
+			.col
+				|3 of 3
+		
+		.row
+			.col
+				|1 of 3
+			.col-5
+				|2 of 3 (wider)
+			.col
+				|3 of 3
+
+		.sample
+			pre
+				code.
+					&lt;div class="container"&gt;
+						&lt;div class="row"&gt;
+							&lt;div class="col"&gt;1 of 3&lt;/div&gt;
+							&lt;div class="col-6"&gt;2 of 3 (wider)&lt;/div&gt;
+							&lt;div class="col"&gt;3 of 3&lt;/div&gt;
+						&lt;/div&gt;
+						&lt;div class="row"&gt;
+							&lt;div class="col"&gt;1 of 3&lt;/div&gt;
+							&lt;div class="col-5"&gt;2 of 3 (wider)&lt;/div&gt;
+							&lt;div class="col"&gt;3 of 3&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+
+	.container
+		h3 Variable width content
+		p Use 
+			code col-{breakpoint}-auto
+			|classes to size columns based on the natural width of their content.
+
+		.row.justify-content-md-center
+			.col.col-lg-2
+				|1 of 3
+			.col-md-auto
+				|Variable width content
+			.col.col-lg-2
+				|3 of 3
+
+		.row
+			.col
+				|1 of 3
+			.col-md-auto
+				|Variable width content
+			.col.col-lg-2
+				|3 of 3
+
+		.sample
+			pre
+				code.
+					&lt;div class="container"&gt;
+						&lt;div class="row justify-content-md-center"&gt;
+							&lt;div class="col col-lg-2"&gt;
+								1 of 3
+							&lt;/div&gt;
+							&lt;div class="col-md-auto"&gt;
+								Variable width content
+							&lt;/div&gt;
+							&lt;div class="col col-lg-2"&gt;
+								3 of 3
+							&lt;/div&gt;
+						&lt;/div&gt;
+						&lt;div class="row"&gt;
+							&lt;div class="col"&gt;
+								1 of 3
+							&lt;/div&gt;
+							&lt;div class="col-md-auto"&gt;
+								Variable width content
+							&lt;/div&gt;
+							&lt;div class="col col-lg-2"&gt;
+								3 of 3
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+	
+	.container
+		h3 Equal-width multi-row
+		p Create equal-width columns that span multiple rows by inserting a 
+			code .w-100
+			| where you want the columns to break to a new line. Make the breaks responsive by mixing the 
+			code .w-100 
+			|with some responsive display utilities.
+
+		.row
+			.col
+				|Column
+			.col
+				|Column
+			.w-100
+			.col
+				|Column
+			.col
+				|Column
+
+		.sample
+			pre
+				code.
+					&lt;div class="container"&gt;
+						&lt;div class="row"&gt;
+							&lt;div class="col"&gt;Column&lt;/div&gt;
+							&lt;div class="col"&gt;Column&lt;/div&gt;
+							&lt;div class="w-100"&gt;&lt;/div&gt;
+							&lt;div class="col"&gt;Column&lt;/div&gt;
+							&lt;div class="col"&gt;Column&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+
+
+	.container
+		h3 Responsive classes
+		p Bootstrap’s grid includes five tiers of predefined classes for building complex responsive layouts. Customize the size of your columns on extra small, small, medium, large, or extra large devices however you see fit.
+
+		h3 All breakpoints
+		p For grids that are the same from the smallest of devices to the largest, use the 
+			code .col 
+			|and 
+			code .col-* 
+			|classes. Specify a numbered class when you need a particularly sized column; otherwise, feel free to stick to .col.
+
+		.row
+			.col
+				|col
+			.col
+				|col
+			.col
+				|col
+			.col
+				|col
+
+		.row
+			.col-8
+				|col-8
+			.col-4
+				|col-4
+
+		.sample
+			pre
+				code.
+					&lt;div class="row"&gt;
+						&lt;div class="col"&gt;col&lt;/div&gt;
+						&lt;div class="col"&gt;col&lt;/div&gt;
+						&lt;div class="col"&gt;col&lt;/div&gt;
+						&lt;div class="col"&gt;col&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class="row"&gt;
+						&lt;div class="col-8"&gt;col-8&lt;/div&gt;
+						&lt;div class="col-4"&gt;col-4&lt;/div&gt;
+					&lt;/div&gt;
+
+	.container
+		h3 Stacked to horizontal
+		p Using a single set of 
+			code .col-sm-* 
+			|classes, you can create a basic grid system that starts out stacked before becoming horizontal with at the small breakpoint (sm).
+
+		.row
+			.col-sm-8
+				|col-sm-8
+			.col-sm-4
+				|col-sm-4
+
+		.row
+			.col-sm
+				|col-sm
+			.col-sm
+				|col-sm
+			.col-sm
+				|col-sm
+
+		.sample
+			pre
+				code.
+					&lt;div class="row"&gt;
+						&lt;div class="col-sm-8"&gt;col-sm-8&lt;/div&gt;
+						&lt;div class="col-sm-4"&gt;col-sm-4&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class="row"&gt;
+						&lt;div class="col-sm"&gt;col-sm&lt;/div&gt;
+						&lt;div class="col-sm"&gt;col-sm&lt;/div&gt;
+						&lt;div class="col-sm"&gt;col-sm&lt;/div&gt;
+					&lt;/div&gt;
+
+
+	.container
+		h3 Mix and match
+		p Don’t want your columns to simply stack in some grid tiers? Use a combination of different classes for each tier as needed. See the example below for a better idea of how it all works.
+
+		.row
+			.col-12.col-md-8
+				|.col-12 .col-md-8
+			.col-6.col-md-4
+				|.col-6 .col-md-4
+
+		.row
+			.col-6.col-md-4
+				|.col-6 .col-md-4
+			.col-6.col-md-4
+				|.col-6 .col-md-4
+			.col-6.col-md-4
+				|.col-6 .col-md-4
+
+		.row
+			.col-6
+				|.col-6
+			.col-6
+				|.col-6
+
+		.sample
+			pre
+				code.
+					&lt;!-- Stack the columns on mobile by making one full-width and the other half-width --&gt;
+					&lt;div class="row"&gt;
+						&lt;div class="col-12 col-md-8"&gt;.col-12 .col-md-8&lt;/div&gt;
+						&lt;div class="col-6 col-md-4"&gt;.col-6 .col-md-4&lt;/div&gt;
+					&lt;/div&gt;
+
+					&lt;!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop --&gt;
+					&lt;div class="row"&gt;
+						&lt;div class="col-6 col-md-4"&gt;.col-6 .col-md-4&lt;/div&gt;
+						&lt;div class="col-6 col-md-4"&gt;.col-6 .col-md-4&lt;/div&gt;
+						&lt;div class="col-6 col-md-4"&gt;.col-6 .col-md-4&lt;/div&gt;
+					&lt;/div&gt;
+
+					&lt;!-- Columns are always 50% wide, on mobile and desktop --&gt;
+					&lt;div class="row"&gt;
+						&lt;div class="col-6"&gt;.col-6&lt;/div&gt;
+						&lt;div class="col-6"&gt;.col-6&lt;/div&gt;
 					&lt;/div&gt;

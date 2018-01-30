@@ -61,6 +61,7 @@
       </header>
       <div class="fw-example">
         <div class="container">
+          <h3>How it works</h3>
           <div class="row">
             <div class="col">col</div>
             <div class="col">col</div>
@@ -79,7 +80,10 @@
           </div>
         </div>
         <div class="container">
+          <h3>Auto-layout columns</h3>
+          <p>Utilize breakpoint-specific column classes for easy column sizing without an explicit numbered class like <code>.col-sm-6</code>.</p>
           <h3>Equal-width</h3>
+          <p>For example, here are two grid layouts that apply to every device and viewport, from <code>xs</code>to <code>xl</code>. Add any number of unit-less classes for each breakpoint you need and every column will be the same width.</p>
           <div class="row">
             <div class="col">1 of 2</div>
             <div class="col">2 of 2</div>
@@ -92,30 +96,18 @@
           <div class="samble">
             <pre><code>&lt;div class="container"&gt;
 	&lt;div class="row"&gt;
-		&lt;div class="col"&gt;
-			1 of 2
-		&lt;/div&gt;
-		&lt;div class="col"&gt;
-			2 of 2
-		&lt;/div&gt;
+		&lt;div class="col"&gt;1 of 2&lt;/div&gt;
+		&lt;div class="col"&gt;2 of 2&lt;/div&gt;
 	&lt;/div&gt;
 	&lt;div class="row"&gt;
-		&lt;div class="col"&gt;
-			1 of 3
-		&lt;/div&gt;
-		&lt;div class="col"&gt;
-			2 of 3
-		&lt;/div&gt;
-		&lt;div class="col"&gt;
-			3 of 3
-		&lt;/div&gt;
+		&lt;div class="col"&gt;1 of 3&lt;/div&gt;
+		&lt;div class="col"&gt;2 of 3&lt;/div&gt;
+		&lt;div class="col"&gt;3 of 3&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
           </div>
-        </div>
-        <div class="container">
-          <h3>Multiple lines</h3>
+          <p>Equal-width columns can be broken into multiple lines, but there was a Safari flexbox bug that prevented this from working without an explicit <code>flex-basis</code>or <code>border</code>. There are workarounds for older browser versions, but they shouldn’t be necessary if you’re up-to-date.</p>
           <div class="row">
             <div class="col">Column</div>
             <div class="col">Column</div>
@@ -132,6 +124,193 @@
 		&lt;div class="col"&gt;Column&lt;/div&gt;
 		&lt;div class="col"&gt;Column&lt;/div&gt;
 	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          </div>
+        </div>
+        <div class="container">
+          <h3>Setting one column width</h3>
+          <p>Auto-layout for flexbox grid columns also means you can set the width of one column and have the sibling columns automatically resize around it. You may use predefined grid classes (as shown below), grid mixins, or inline widths. Note that the other columns will resize no matter the width of the center column.</p>
+          <div class="row">
+            <div class="col">1 of 3</div>
+            <div class="col-6">2 of 3 (wider)</div>
+            <div class="col">3 of 3</div>
+          </div>
+          <div class="row">
+            <div class="col">1 of 3</div>
+            <div class="col-5">2 of 3 (wider)</div>
+            <div class="col">3 of 3</div>
+          </div>
+          <div class="sample">
+            <pre><code>&lt;div class="container"&gt;
+	&lt;div class="row"&gt;
+		&lt;div class="col"&gt;1 of 3&lt;/div&gt;
+		&lt;div class="col-6"&gt;2 of 3 (wider)&lt;/div&gt;
+		&lt;div class="col"&gt;3 of 3&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="row"&gt;
+		&lt;div class="col"&gt;1 of 3&lt;/div&gt;
+		&lt;div class="col-5"&gt;2 of 3 (wider)&lt;/div&gt;
+		&lt;div class="col"&gt;3 of 3&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          </div>
+        </div>
+        <div class="container">
+          <h3>Variable width content</h3>
+          <p>Use <code>col-{breakpoint}-auto</code>classes to size columns based on the natural width of their content.</p>
+          <div class="row justify-content-md-center">
+            <div class="col col-lg-2">1 of 3</div>
+            <div class="col-md-auto">Variable width content</div>
+            <div class="col col-lg-2">3 of 3</div>
+          </div>
+          <div class="row">
+            <div class="col">1 of 3</div>
+            <div class="col-md-auto">Variable width content</div>
+            <div class="col col-lg-2">3 of 3</div>
+          </div>
+          <div class="sample">
+            <pre><code>&lt;div class="container"&gt;
+	&lt;div class="row justify-content-md-center"&gt;
+		&lt;div class="col col-lg-2"&gt;
+			1 of 3
+		&lt;/div&gt;
+		&lt;div class="col-md-auto"&gt;
+			Variable width content
+		&lt;/div&gt;
+		&lt;div class="col col-lg-2"&gt;
+			3 of 3
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="row"&gt;
+		&lt;div class="col"&gt;
+			1 of 3
+		&lt;/div&gt;
+		&lt;div class="col-md-auto"&gt;
+			Variable width content
+		&lt;/div&gt;
+		&lt;div class="col col-lg-2"&gt;
+			3 of 3
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          </div>
+        </div>
+        <div class="container">
+          <h3>Equal-width multi-row</h3>
+          <p>Create equal-width columns that span multiple rows by inserting a <code>.w-100</code>where you want the columns to break to a new line. Make the breaks responsive by mixing the <code>.w-100 </code>with some responsive display utilities.</p>
+          <div class="row">
+            <div class="col">Column</div>
+            <div class="col">Column</div>
+            <div class="w-100"></div>
+            <div class="col">Column</div>
+            <div class="col">Column</div>
+          </div>
+          <div class="sample">
+            <pre><code>&lt;div class="container"&gt;
+	&lt;div class="row"&gt;
+		&lt;div class="col"&gt;Column&lt;/div&gt;
+		&lt;div class="col"&gt;Column&lt;/div&gt;
+		&lt;div class="w-100"&gt;&lt;/div&gt;
+		&lt;div class="col"&gt;Column&lt;/div&gt;
+		&lt;div class="col"&gt;Column&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+          </div>
+        </div>
+        <div class="container">
+          <h3>Responsive classes</h3>
+          <p>Bootstrap’s grid includes five tiers of predefined classes for building complex responsive layouts. Customize the size of your columns on extra small, small, medium, large, or extra large devices however you see fit.</p>
+          <h3>All breakpoints</h3>
+          <p>For grids that are the same from the smallest of devices to the largest, use the <code>.col </code>and <code>.col-* </code>classes. Specify a numbered class when you need a particularly sized column; otherwise, feel free to stick to .col.</p>
+          <div class="row">
+            <div class="col">col</div>
+            <div class="col">col</div>
+            <div class="col">col</div>
+            <div class="col">col</div>
+          </div>
+          <div class="row">
+            <div class="col-8">col-8</div>
+            <div class="col-4">col-4</div>
+          </div>
+          <div class="sample">
+            <pre><code>&lt;div class="row"&gt;
+	&lt;div class="col"&gt;col&lt;/div&gt;
+	&lt;div class="col"&gt;col&lt;/div&gt;
+	&lt;div class="col"&gt;col&lt;/div&gt;
+	&lt;div class="col"&gt;col&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+	&lt;div class="col-8"&gt;col-8&lt;/div&gt;
+	&lt;div class="col-4"&gt;col-4&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          </div>
+        </div>
+        <div class="container">
+          <h3>Stacked to horizontal</h3>
+          <p>Using a single set of <code>.col-sm-* </code>classes, you can create a basic grid system that starts out stacked before becoming horizontal with at the small breakpoint (sm).</p>
+          <div class="row">
+            <div class="col-sm-8">col-sm-8</div>
+            <div class="col-sm-4">col-sm-4</div>
+          </div>
+          <div class="row">
+            <div class="col-sm">col-sm</div>
+            <div class="col-sm">col-sm</div>
+            <div class="col-sm">col-sm</div>
+          </div>
+          <div class="sample">
+            <pre><code>&lt;div class="row"&gt;
+	&lt;div class="col-sm-8"&gt;col-sm-8&lt;/div&gt;
+	&lt;div class="col-sm-4"&gt;col-sm-4&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+	&lt;div class="col-sm"&gt;col-sm&lt;/div&gt;
+	&lt;div class="col-sm"&gt;col-sm&lt;/div&gt;
+	&lt;div class="col-sm"&gt;col-sm&lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+          </div>
+        </div>
+        <div class="container">
+          <h3>Mix and match</h3>
+          <p>Don’t want your columns to simply stack in some grid tiers? Use a combination of different classes for each tier as needed. See the example below for a better idea of how it all works.</p>
+          <div class="row">
+            <div class="col-12 col-md-8">.col-12 .col-md-8</div>
+            <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+          </div>
+          <div class="row">
+            <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+            <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+            <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+          </div>
+          <div class="row">
+            <div class="col-6">.col-6</div>
+            <div class="col-6">.col-6</div>
+          </div>
+          <div class="sample">
+            <pre><code>&lt;!-- Stack the columns on mobile by making one full-width and the other half-width --&gt;
+&lt;div class="row"&gt;
+	&lt;div class="col-12 col-md-8"&gt;.col-12 .col-md-8&lt;/div&gt;
+	&lt;div class="col-6 col-md-4"&gt;.col-6 .col-md-4&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop --&gt;
+&lt;div class="row"&gt;
+	&lt;div class="col-6 col-md-4"&gt;.col-6 .col-md-4&lt;/div&gt;
+	&lt;div class="col-6 col-md-4"&gt;.col-6 .col-md-4&lt;/div&gt;
+	&lt;div class="col-6 col-md-4"&gt;.col-6 .col-md-4&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Columns are always 50% wide, on mobile and desktop --&gt;
+&lt;div class="row"&gt;
+	&lt;div class="col-6"&gt;.col-6&lt;/div&gt;
+	&lt;div class="col-6"&gt;.col-6&lt;/div&gt;
 &lt;/div&gt;</code></pre>
           </div>
         </div>
@@ -170,5 +349,7 @@
       <div class="mobile-cont__phone"><i class="i-phone mobile-cont__phone-icon"></i><a class="phone__mobile" href="tel:+78004352356">+7 800 435 23 56</a></div>
     </div>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>

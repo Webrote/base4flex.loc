@@ -121,10 +121,6 @@ $screen-lg-max ?=			($screen-xl-min - 1)
 //== Grid system
 // 
 
-// будет контейнер резиновым (true, иметь максимальную или минимальную ширину)
-// либо (false) будет менять ширину взависимости от размера экрана
-$is-container-fluid ?= false
-
 // Maximum container width
 $container-max ?=       1170px
 $container-min ?=       320px
@@ -144,10 +140,10 @@ $container-lg ?=               960px
 $container-xl ?=               1140px
 
 $container-max-widths ?= {
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px
 }
 
 //== Pagination
