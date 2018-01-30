@@ -13,7 +13,7 @@ module.exports = function (grunt) {
 					// для pug-файлов использую расширение .jade
 					// что бы открывалась JADE подсветка в редакторе.
 					"index.html": "src/pug/index.jade",
-					// "simple-text.html": "src/pug/simple-text-page.jade",
+					"fw-grid.html": "src/pug/fw-grid.jade",
 				}
 			}
 		},
