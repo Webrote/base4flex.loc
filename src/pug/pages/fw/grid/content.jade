@@ -1,6 +1,9 @@
+.container
+	h1 Grid system
+	p Use our powerful mobile-first flexbox grid to build layouts of all shapes and sizes thanks to a twelve column system, five default responsive tiers, Sass variables and mixins, and dozens of predefined classes.
 .fw-example
 	.container
-		h3 How it works
+		h2 How it works
 		.row
 			.col
 				|col
@@ -20,9 +23,9 @@
 						&lt;/div&gt;
 					&lt;/div&gt;
 
-
+.fw-example
 	.container
-		h3 Auto-layout columns
+		h2 Auto-layout columns
 		p Utilize breakpoint-specific column classes for easy column sizing without an explicit numbered class like 
 			code .col-sm-6
 			|.
@@ -91,6 +94,7 @@
 						&lt;/div&gt;
 					&lt;/div&gt;
 
+.fw-example
 	.container
 		h3 Setting one column width
 		p Auto-layout for flexbox grid columns also means you can set the width of one column and have the sibling columns automatically resize around it. You may use predefined grid classes (as shown below), grid mixins, or inline widths. Note that the other columns will resize no matter the width of the center column.
@@ -126,6 +130,7 @@
 						&lt;/div&gt;
 					&lt;/div&gt;
 
+.fw-example
 	.container
 		h3 Variable width content
 		p Use 
@@ -175,7 +180,8 @@
 							&lt;/div&gt;
 						&lt;/div&gt;
 					&lt;/div&gt;
-	
+
+.fw-example
 	.container
 		h3 Equal-width multi-row
 		p Create equal-width columns that span multiple rows by inserting a 
@@ -208,9 +214,9 @@
 						&lt;/div&gt;
 					&lt;/div&gt;
 
-
+.fw-example
 	.container
-		h3 Responsive classes
+		h2 Responsive classes
 		p Bootstrap’s grid includes five tiers of predefined classes for building complex responsive layouts. Customize the size of your columns on extra small, small, medium, large, or extra large devices however you see fit.
 
 		h3 All breakpoints
@@ -250,6 +256,7 @@
 						&lt;div class="col-4"&gt;col-4&lt;/div&gt;
 					&lt;/div&gt;
 
+.fw-example
 	.container
 		h3 Stacked to horizontal
 		p Using a single set of 
@@ -283,7 +290,7 @@
 						&lt;div class="col-sm"&gt;col-sm&lt;/div&gt;
 					&lt;/div&gt;
 
-
+.fw-example
 	.container
 		h3 Mix and match
 		p Don’t want your columns to simply stack in some grid tiers? Use a combination of different classes for each tier as needed. See the example below for a better idea of how it all works.
@@ -328,4 +335,79 @@
 					&lt;div class="row"&gt;
 						&lt;div class="col-6"&gt;.col-6&lt;/div&gt;
 						&lt;div class="col-6"&gt;.col-6&lt;/div&gt;
+					&lt;/div&gt;
+
+.fw-example.fw-example__row-flex-col
+	.container
+		h2 Alignment
+		p Use flexbox alignment utilities to vertically and horizontally align columns.
+
+		h3 Vertical alignment
+
+		.row.align-items-start
+			.col
+				|One of three columns
+			.col
+				|One of three columns
+			.col
+				|One of three columns
+
+		.row.align-items-center
+			.col
+				|One of three columns
+			.col
+				|One of three columns
+			.col
+				|One of three columns
+
+		.row.align-items-end
+			.col
+				|One of three columns
+			.col
+				|One of three columns
+			.col
+				|One of three columns
+
+		.sample
+			pre
+				code.
+					&lt;div class="container"&gt;
+						&lt;div class="row align-items-start"&gt;
+							&lt;div class="col"&gt;One of three columns&lt;/div&gt;
+							&lt;div class="col"&gt;One of three columns&lt;/div&gt;
+							&lt;div class="col"&gt;One of three columns&lt;/div&gt;
+						&lt;/div&gt;
+						&lt;div class="row align-items-center"&gt;
+							&lt;div class="col"&gt;One of three columns&lt;/div&gt;
+							&lt;div class="col"&gt;One of three columns&lt;/div&gt;
+							&lt;div class="col"&gt;One of three columns&lt;/div&gt;
+						&lt;/div&gt;
+						&lt;div class="row align-items-end"&gt;
+							&lt;div class="col"&gt;One of three columns&lt;/div&gt;
+							&lt;div class="col"&gt;One of three columns&lt;/div&gt;
+							&lt;div class="col"&gt;One of three columns&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+
+.fw-example.fw-example__row-flex-col
+	.container
+		
+		.row
+			.col.align-self-start
+				|One of three columns
+			.col.align-self-center
+				|One of three columns
+			.col.align-self-end
+				|One of three columns
+
+
+		.sample
+			pre
+				code.
+					&lt;div class="container"&gt;
+						&lt;div class="row"&gt;
+							&lt;div class="col align-self-start"&gt;One of three columns&lt;/div&gt;
+							&lt;div class="col align-self-center"&gt;One of three columns&lt;/div&gt;
+							&lt;div class="col align-self-end"&gt;One of three columns&lt;/div&gt;
+						&lt;/div&gt;
 					&lt;/div&gt;
