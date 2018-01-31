@@ -14,6 +14,7 @@ module.exports = function (grunt) {
 					// что бы открывалась JADE подсветка в редакторе.
 					"index.html": "src/pug/index.jade",
 					"fw-grid.html": "src/pug/fw-grid.jade",
+					"fw-forms.html": "src/pug/fw-forms.jade",
 				}
 			}
 		},

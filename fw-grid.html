@@ -60,7 +60,15 @@
         </div>
       </header>
       <div class="container">
+        <div class="breadcrumb">
+          <div class="breadcrumb__inline" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="" itemprop="url"><span itemprop="title">Главная</span></a></div><span class="breadcrumb__delimiter i-right-arrow"></span>
+          <div class="breadcrumb__inline" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">Сетка</span></div>
+        </div>
+      </div>
+      <div class="container">
         <h1>Grid system</h1>
+      </div>
+      <div class="container">
         <p>Use our powerful mobile-first flexbox grid to build layouts of all shapes and sizes thanks to a twelve column system, five default responsive tiers, Sass variables and mixins, and dozens of predefined classes.</p>
       </div>
       <div class="fw-example">
@@ -387,7 +395,58 @@
 		&lt;div class="col align-self-center"&gt;One of three columns&lt;/div&gt;
 		&lt;div class="col align-self-end"&gt;One of three columns&lt;/div&gt;
 	&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="fw-example">
+        <div class="container">
+          <h3>Horizontal alignment</h3>
+          <div class="row justify-content-start">
+            <div class="col-4">One of two columns</div>
+            <div class="col-4">One of two columns</div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-4">One of two columns</div>
+            <div class="col-4">One of two columns</div>
+          </div>
+          <div class="row justify-content-end">
+            <div class="col-4">One of two columns</div>
+            <div class="col-4">One of two columns</div>
+          </div>
+          <div class="row justify-content-around">
+            <div class="col-4">One of two columns</div>
+            <div class="col-4">One of two columns</div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-4">One of two columns</div>
+            <div class="col-4">One of two columns</div>
+          </div>
+          <div class="sample">
+            <pre><code>&lt;div class="container"&gt;
+	&lt;div class="row justify-content-start"&gt;
+		&lt;div class="col-4"&gt;One of two columns	&lt;/div&gt;
+		&lt;div class="col-4"&gt;One of two columns	&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="row justify-content-center"&gt;
+		&lt;div class="col-4"&gt;One of two columns
+		&lt;/div&gt;
+		&lt;div class="col-4"&gt;One of two columns	&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="row justify-content-end"&gt;
+		&lt;div class="col-4"&gt;One of two columns	&lt;/div&gt;
+		&lt;div class="col-4"&gt;One of two columns	&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="row justify-content-around"&gt;
+		&lt;div class="col-4"&gt;One of two columns	&lt;/div&gt;
+		&lt;div class="col-4"&gt;One of two columns	&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="row justify-content-between"&gt;
+		&lt;div class="col-4"&gt;One of two columns	&lt;/div&gt;
+		&lt;div class="col-4"&gt;One of two columns	&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;					</code></pre>
           </div>
         </div>
       </div>

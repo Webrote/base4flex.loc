@@ -1,0 +1,38 @@
+.breadcrumb
+	font-size round($breadcrumb-font-size * 0.86)
+	color $breadcrumb-text-color
+	background-color transparent
+	padding 5px 0
+	display inline-block
+	// margin-block(10px,20px)
+	
+	a
+		font-size round($breadcrumb-font-size * 0.86)
+		color $breadcrumb-link-color
+		// border-bottom 1px solid 
+		transit(,100ms)
+		
+		+hover-focus()
+			color $breadcrumb-link-color
+			// text-decoration none
+			// border-bottom 1px solid transparent
+			
+	// @media screen and (min-width $screen-sm-min)
+	+media-breakpoint-up(md)
+		font-size $breadcrumb-font-size
+		
+		a
+			font-size $breadcrumb-font-size
+
+	&__delimiter
+		&:before
+			content $breadcrumb-delimiter-content
+			font-size $breadcrumb-delimiter-font-size
+			color $breadcrumb-text-color
+			margin-left 5px 
+			margin-right 2px 
+		
+
+	&__inline
+		display inline-block
+		

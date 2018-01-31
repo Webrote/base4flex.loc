@@ -1,9 +1,9 @@
 extends templates/template-one-column.jade
 
 block variables
-	- var page_class = "fw-grid"
-	- var page_heading_titile = 'Grid system'
-	- var breadcrumb_chain = ["Главная", "Сетка"] 
+	- var page_class = "fw-forms"
+	- var page_heading_titile = 'Forms elements'
+	- var breadcrumb_chain = ["Главная", "Элементы формы"] 
 	
 block prepend links
 
@@ -14,7 +14,7 @@ block heading_titile
 	h1 #{page_heading_titile}
 
 block content
-	include pages/fw/grid/content.jade
+	include pages/fw/forms/content.jade
 
 
 

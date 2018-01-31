@@ -1,5 +1,4 @@
 .container
-	h1 Grid system
 	p Use our powerful mobile-first flexbox grid to build layouts of all shapes and sizes thanks to a twelve column system, five default responsive tiers, Sass variables and mixins, and dozens of predefined classes.
 .fw-example
 	.container
@@ -411,3 +410,60 @@
 							&lt;div class="col align-self-end"&gt;One of three columns&lt;/div&gt;
 						&lt;/div&gt;
 					&lt;/div&gt;
+
+.fw-example
+	.container
+		h3 Horizontal alignment
+		.row.justify-content-start
+			.col-4
+				|One of two columns
+			.col-4
+				|One of two columns
+		.row.justify-content-center
+			.col-4
+				|One of two columns
+			.col-4
+				|One of two columns
+		.row.justify-content-end
+			.col-4
+				|One of two columns
+			.col-4
+				|One of two columns
+		.row.justify-content-around
+			.col-4
+				|One of two columns
+			.col-4
+				|One of two columns
+		.row.justify-content-between
+			.col-4
+				|One of two columns
+			.col-4
+				|One of two columns
+
+
+		.sample
+			pre
+				code.
+					&lt;div class="container"&gt;
+						&lt;div class="row justify-content-start"&gt;
+							&lt;div class="col-4"&gt;One of two columns	&lt;/div&gt;
+							&lt;div class="col-4"&gt;One of two columns	&lt;/div&gt;
+						&lt;/div&gt;
+						&lt;div class="row justify-content-center"&gt;
+							&lt;div class="col-4"&gt;One of two columns
+							&lt;/div&gt;
+							&lt;div class="col-4"&gt;One of two columns	&lt;/div&gt;
+						&lt;/div&gt;
+						&lt;div class="row justify-content-end"&gt;
+							&lt;div class="col-4"&gt;One of two columns	&lt;/div&gt;
+							&lt;div class="col-4"&gt;One of two columns	&lt;/div&gt;
+						&lt;/div&gt;
+						&lt;div class="row justify-content-around"&gt;
+							&lt;div class="col-4"&gt;One of two columns	&lt;/div&gt;
+							&lt;div class="col-4"&gt;One of two columns	&lt;/div&gt;
+						&lt;/div&gt;
+						&lt;div class="row justify-content-between"&gt;
+							&lt;div class="col-4"&gt;One of two columns	&lt;/div&gt;
+							&lt;div class="col-4"&gt;One of two columns	&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;					
