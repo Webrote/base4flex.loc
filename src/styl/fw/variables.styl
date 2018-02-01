@@ -161,18 +161,18 @@ $breadcrumb-delimiter-font-size ?= $breadcrumb-font-size
 //##
 
 $pagination-color ?=					$link-color
-$pagination-bg ?=						#f7f5f0
-$pagination-border ?=         			#e4dcc9
+$pagination-bg ?=						#eee
+$pagination-border ?=         			#ced4da
 $pagination-padding-vertical ?=			6px
 $pagination-padding-horizontal ?=		10px
 
 $pagination-hover-color ?=				$link-hover-color
-$pagination-hover-bg ?=					$gray-lighter
+$pagination-hover-bg ?=					#fefefe
 $pagination-hover-border ?=				#ddd
 
 $pagination-active-color ?=				#fff
-$pagination-active-bg ?=				#cbba91
-$pagination-active-border ?=			#e4dcc9
+$pagination-active-bg ?=				#aaa
+$pagination-active-border ?=			#ccc
 
 $pagination-active-class ?=            '.pager-current'
 
@@ -188,6 +188,14 @@ $_burger-pseudo-between ?= ($burger-all-height - ($burger-one-height * 3)) / 2
 // величина смещение верхнего и нижнего элемента
 $burger-pseudo-offset ?= $_burger-pseudo-between + $burger-one-height
 
+
+// == Pseudo form elements
+// 
+// Pseudo radio
+$radio-before-size ?= 			14px // Должно быть четно, что бы избежать смещения на 0.5px
+$radio-after-size ?= 			6px
+$radio-before-bg ?= 			#ccc
+$radio-after-bg ?= 				#333
 
 // Прижимаем футер к низу страницы
 $footer-height ?=				100px

@@ -3,5 +3,48 @@
 		.form__group
 			label Name
 			input.form__control(type="text", placeholder="Name")
+	
 
+		.form__inline
+			.form__group
+				label Phone
+				input.form__control(type="text", placeholder="Phone")
+
+			.form__group
+				label E-mail
+				input.form__control(type="text", placeholder="E-mail")
+
+			.form__group
+				label E-mail
+				input.form__control(type="text", placeholder="E-mail")
+	
+		.form__inline
+			.form__group.pseudoradio
+				input(type="radio",id="radio-1",name="radio", value="0",checked)
+				label(for="radio-1") Radio 1
+
+			.form__group.pseudoradio
+				input(type="radio",id="radio-2",name="radio", value="1")
+				label(for="radio-2") Radio 2
+
+			.form__group.pseudoradio
+				input(type="radio",id="radio-3",name="radio", value="1")
+				label(for="radio-3") Radio 3
+
+		.form__inline
+			.form__group.pseudocheckbox
+				input(type="checkbox",id="filter-developing",name="filter-developing", value="")
+				label(for="filter-developing") Развивающие
+
+			.form__group.pseudocheckbox
+				input(type="checkbox",id="filter-learning",name="filter-learning", value="")
+				label(for="filter-learning") Обучающие
+
+
+		button Submit
+		input(type="reset" value="Reset")
+
+
+.container
+	+pagination()
 		

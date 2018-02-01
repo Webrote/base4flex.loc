@@ -1,21 +1,23 @@
 .form
 	&__inline
-		display table
-		width 100% 
-		margin-bottom 15px
+		display flex
+		flex-flow row wrap
+		justify-content space-between
+		align-items center
+		margin-right -5px
+		margin-left -5px
 		
 	&__group
 		width 100% 
 		margin-bottom 15px
 		
 		^[0]__inline &
-			display table-cell
-			vertical-align middle
-			padding-right 10px
-			width auto 
-			
-			&:last-child
-				padding-right 0
+			flex-basis 0
+			flex-grow 1
+			max-width 100%
+			padding-right 5px
+			padding-left 5px
+
 	
 	&__block
 		position relative
@@ -45,6 +47,7 @@
 		font-weight bold 
 		font-size 12px
 		padding-left 20px
+		
 	&__anti
 		overflow hidden
 		padding 0
@@ -54,7 +57,10 @@
 			height auto
 			
 	& button
-		font-family SourceSansPro
+	& input[type="submit"]
+	& input[type="reset"]
+		font-family inherit
 		font-size 18px
 		font-weight 500 
-		color #C00000 
+		color #111 
+		cursor pointer

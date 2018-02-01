@@ -1,0 +1,55 @@
+.pseudocheckbox
+	& label
+		position relative
+		padding-left 32px 
+		cursor pointer
+		font-size 16px
+		display inline-block
+		user-select none
+
+	& input[type="checkbox"]
+		position absolute
+		left -9999px
+		
+		&:checked
+			& + label:before
+				content "" 
+				position absolute
+				left 0
+				top 4px
+				width 18px
+				height 18px
+				border 2px solid #39b0e8
+				border-radius 4px 
+				background-color #39b0e8 
+				
+		&:not(:checked)
+			& + label:before
+				content "" 
+				position absolute
+				left 0
+				top 4px
+				width 18px
+				height 18px
+				border 2px solid #D1D1D1  
+				border-radius 4px 
+				background-color #FFF 
+		
+		&:checked	
+			& + label:after
+				content "\4b" 
+				position absolute
+				font-size 11px
+				color #FFF 
+				top 7px
+				left 3px
+				font-family "igrodar" !important
+				font-style normal !important
+				font-weight normal !important
+				font-variant normal !important
+				text-transform none !important
+				speak none
+				line-height 1
+				-webkit-font-smoothing antialiased
+				-moz-osx-font-smoothing grayscale
+				vertical-align middle
