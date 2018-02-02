@@ -70,9 +70,15 @@
       </div>
       <div class="container">
         <form class="form">
-          <div class="form__group">
-            <label>Name</label>
-            <input class="form__control" type="text" placeholder="Name">
+          <div class="form__inline">
+            <div class="form__group">
+              <label>Name</label>
+              <input class="form__control" type="text" placeholder="Name">
+            </div>
+            <div class="form__group">
+              <label>Surname</label>
+              <input class="form__control" type="text" placeholder="Surname">
+            </div>
           </div>
           <div class="form__inline">
             <div class="form__group">
@@ -86,6 +92,34 @@
             <div class="form__group">
               <label>E-mail</label>
               <input class="form__control" type="text" placeholder="E-mail">
+            </div>
+          </div>
+          <div class="form__group">
+            <label>Message</label>
+            <textarea class="form__control" name="" placeholder="Message.."></textarea>
+          </div>
+          <div class="form__inline">
+            <div class="form__group form__select"><a class="pseudoselect js-pseudoselect" href=""> <span class="pseudoselect__placer">Select Options-1</span><span class="pseudoselect__icon i-triangle-down"></span></a>
+              <ul class="drop js-drop">
+                <li data-id="0">Option 1</li>
+                <li data-id="1">Option 2</li>
+                <li class="active" data-id="2">Option 3</li>
+                <li data-id="3">Option 4</li>
+                <li data-id="4">Option 5</li>
+                <li data-id="5">Option 6</li>
+              </ul>
+              <input type="hidden" name="select-1" id="select-1">
+            </div>
+            <div class="form__group form__select"><a class="pseudoselect js-pseudoselect disabled" href=""> <span class="pseudoselect__placer">Select Options-2</span><span class="pseudoselect__icon"></span></a>
+              <ul class="drop js-drop">
+                <li data-id="0">Option 1</li>
+                <li data-id="1">Option 2</li>
+                <li class="active" data-id="2">Option 3</li>
+                <li data-id="3">Option 4</li>
+                <li data-id="4">Option 5</li>
+                <li data-id="5">Option 6</li>
+              </ul>
+              <input type="hidden" name="select-2" id="select-2">
             </div>
           </div>
           <div class="form__group pseudoradio">
@@ -108,8 +142,8 @@
             <input type="checkbox" id="checkbox-2" name="checkbox-2" value="" hidden>
             <label for="checkbox-2">Check-box-2</label>
           </div>
-          <div class="form__group pseudocheckbox">
-            <input type="checkbox" id="checkbox-3" name="checkbox-3" value="" hidden>
+          <div class="form__group pseudocheckbox disabled">
+            <input type="checkbox" id="checkbox-3" name="checkbox-3" value="" disabled hidden>
             <label for="checkbox-3">Check-box-3</label>
           </div>
           <button>Submit</button>

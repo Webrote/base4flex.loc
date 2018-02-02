@@ -20,6 +20,6 @@ pseudo-checkbox-before()
 		background-color $checkbox-before-bg 
 		
 pseudo-checkbox-after()
-	left $checkbox-cx
-	top $checkbox-cy
+	left 'calc(%s + 2px)' %$checkbox-cx
+	top 'calc(%s - 4px)' %$checkbox-cy
 	transform translate(-50%, -50%) rotateZ(45deg)

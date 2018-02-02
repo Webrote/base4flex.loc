@@ -1,0 +1,29 @@
+pseudoselect()
+	height $form-control-height
+	line-height $select-lineheight
+	border-style solid 
+	border-width $select-border-width
+	border-color $select-border-color 
+	background $select-bg 
+	border-radius $select-border-radius
+	color $select-text-color
+	text-decoration none
+	
+	+hover-focus()
+		text-decoration none
+		color $select-text-color
+		
+drop()
+	display none
+	position absolute
+	left 0
+	width 100% 
+	z-index $zindex-dropdown 
+	padding 0
+	margin 0
+	border-style solid 
+	border-width $drop-border-width 
+	border-color $drop-border-color 
+	background-color $drop-bg
+	text-align left
+	overflow-y scroll

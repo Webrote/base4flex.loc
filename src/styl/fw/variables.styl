@@ -94,6 +94,7 @@ $menu-bg-color ?=           #fbfbfb
 //-- Z-index master list
 $zindex-mobile-menu ?=			2000
 $zindex-overlay ?=				900
+$zindex-dropdown ?= 			100
 
 
 //== Media queries breakpoints
@@ -189,9 +190,20 @@ $_burger-pseudo-between ?= ($burger-all-height - ($burger-one-height * 3)) / 2
 $burger-pseudo-offset ?= $_burger-pseudo-between + $burger-one-height
 
 
+
+// == Forms
+// 
+// Отступы справа и слева для колонок с формами при инлайн расположении
+$form-inline-indent ?= 				10px
+$form-control-height ?= 			35px
+$form-control-border-width ?= 		1px
+$form-control-border-color ?= 		#ced4da
+
 // == Pseudo form elements
 // 
 // Pseudo radio
+// 
+
 $radio-befor-border ?= 				true
 $radio-befor-bg ?= 					true
 
@@ -205,6 +217,7 @@ $radio-before-bg ?= 				#ccc
 $radio-after-bg ?= 					#333
 
 // Pseudo radio
+// 
 
 $checkbox-befor-border ?= 			true
 $checkbox-befor-bg ?= 				true
@@ -218,6 +231,23 @@ $checkbox-before-bg ?= 				#ccc
 
 $checkbox-before-border-color-checked ?= 	#777
 $checkbox-before-bg-checked ?= 				#eee
+
+// Pseudo select
+// 
+$select-height ?= 					$form-control-height
+$select-lineheight ?=				$select-height - 2px // размер чуть меньше чем высота (из-за рамки)
+$select-border-width ?= 			1px
+$select-border-color ?= 			#dadae7 
+$select-border-radius ?= 			3px
+$select-bg ?= 						#E1E2ED 
+$select-text-color ?= 				#6C6C6C // цвет текста на главном элементе
+
+$drop-border-width ?= 				1px
+$drop-border-color ?= 				#b5bcc4
+$drop-bg ?= 						#fff
+$drop-list-color ?= 				#000 
+$drop-list-hover-color ?= 			#fff
+$drop-list-hover-bg ?= 				#3875d7
 
 
 // Прижимаем футер к низу страницы

@@ -15,6 +15,7 @@ module.exports = function (grunt) {
 					"index.html": "src/pug/index.jade",
 					"fw-grid.html": "src/pug/fw-grid.jade",
 					"fw-forms.html": "src/pug/fw-forms.jade",
+					"fw-fullpage.html": "src/pug/fw-fullpage.jade",
 				}
 			}
 		},

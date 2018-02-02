@@ -1,0 +1,35 @@
+extends templates/template-fullpage.jade
+
+block variables
+	- var page_class = ""
+	- var page_heading_titile = ''
+	- var breadcrumb_chain = ["Главная", "Сетка"] 
+	
+block prepend links
+
+block pixel-glass-templates
+	//- include ../../pixel-glass-teplates/index-lg.html
+
+
+block wrapper
+	#fullpage.fullpage
+
+		//- section.section.section_main.fullpage__item()
+		//- 	include includes/pages/index/section-main.jade
+
+		//- section.section.fullpage__item()
+		//- 	include includes/pages/index/section-about.jade
+
+		//- section.section.fullpage__item()
+		//- 	include includes/pages/index/section-services.jade
+
+		//- section.section.fullpage__item()
+		//- 	include includes/pages/index/section-gallery.jade
+
+		//- section.section.fullpage__item()
+		//- 	include includes/pages/index/section-contacts.jade
+
+
+
+block prepend bottom-scripts
+	

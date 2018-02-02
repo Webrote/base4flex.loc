@@ -36,14 +36,15 @@
 				border 2px solid #39b0e8
 				border-color $checkbox-before-border-color-checked 
 				background-color $checkbox-before-bg-checked
-				
-				
-		// &:not(:checked)
-		// 	& + label:before
-		// 		border 2px solid #D1D1D1  
-		// 		border-radius 4px 
-		// 		background-color #FFF 
 		
 		&:checked	
 			& + label:after
 				opacity 1
+				
+	&.disabled
+		& input[type="checkbox"]
+			& + label
+				color rgba(85, 85, 85, 0.5)
+				&:before
+					background-color rgba(197, 198, 216, 0.5) !important
+					border-color rgba(197, 198, 216, 0.9) !important
