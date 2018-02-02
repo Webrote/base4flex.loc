@@ -1852,6 +1852,7 @@ textarea.form__control {
 .pseudoradio input[type="radio"] + label:after {
   content: "";
   position: absolute;
+  border-radius: 50%;
 }
 .pseudoradio input[type="radio"] + label:before {
   left: 0px;
@@ -1859,14 +1860,16 @@ textarea.form__control {
   top: calc(50% - 7px);
   width: 14px;
   height: 14px;
-  border-radius: 20px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #555;
   background-color: #ccc;
 }
 .pseudoradio input[type="radio"] + label:after {
-  left: 7px;
-  top: 50%;
   width: 0;
   height: 0;
+  left: 7px;
+  top: 50%;
   -webkit-transition: all ease-in-out 100ms 0ms;
   -o-transition: all ease-in-out 100ms 0ms;
   transition: all ease-in-out 100ms 0ms;
@@ -1877,20 +1880,20 @@ textarea.form__control {
   top: calc(50% - 3px);
   width: 6px;
   height: 6px;
-  border-radius: 10px;
   background-color: rgba(51,51,51,0.7);
 }
-.pseudoradio.disabled label {
+.pseudoradio.disabled input[type="radio"] + label {
   color: rgba(85,85,85,0.5);
 }
-.pseudoradio.disabled label:before {
+.pseudoradio.disabled input[type="radio"] + label:before {
   background-color: rgba(197,198,216,0.5) !important;
+  border-color: rgba(197,198,216,0.9) !important;
 }
 .pseudocheckbox label {
   position: relative;
-  padding-left: 32px;
+  padding-left: 40px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: inherit;
   display: inline-block;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -1901,45 +1904,51 @@ textarea.form__control {
   position: absolute;
   left: -9999px;
 }
-.pseudocheckbox input[type="checkbox"]:checked + label:before {
+.pseudocheckbox input[type="checkbox"] + label:before,
+.pseudocheckbox input[type="checkbox"] + label:after {
   content: "";
   position: absolute;
-  left: 0;
-  top: 4px;
-  width: 18px;
-  height: 18px;
-  border: 2px solid #39b0e8;
-  border-radius: 4px;
-  background-color: #39b0e8;
 }
-.pseudocheckbox input[type="checkbox"]:not(:checked) + label:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 4px;
+.pseudocheckbox input[type="checkbox"] + label:before {
+  left: 0px;
+  top: -webkit-calc(50% - 9px);
+  top: calc(50% - 9px);
   width: 18px;
   height: 18px;
-  border: 2px solid #d1d1d1;
   border-radius: 4px;
-  background-color: #fff;
+  border-width: 2px;
+  border-color: #555;
+  border-style: solid;
+  background-color: #ccc;
+  -webkit-transition: all ease-in-out 100ms 0ms;
+  -o-transition: all ease-in-out 100ms 0ms;
+  transition: all ease-in-out 100ms 0ms;
+}
+.pseudocheckbox input[type="checkbox"] + label:after {
+  left: 9px;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) rotateZ(45deg);
+      -ms-transform: translate(-50%, -50%) rotate(45deg);
+       -o-transform: translate(-50%, -50%) rotateZ(45deg);
+          transform: translate(-50%, -50%) rotateZ(45deg);
+  opacity: 0;
+  display: block;
+  width: 9px;
+  height: 14px;
+  border: 0 solid #ff4f5a;
+  border-width: 0 2px 2px 0;
+  pointer-events: none;
+  -webkit-transition: all ease-in-out 100ms 0ms;
+  -o-transition: all ease-in-out 100ms 0ms;
+  transition: all ease-in-out 100ms 0ms;
+}
+.pseudocheckbox input[type="checkbox"]:checked + label:before {
+  border: 2px solid #39b0e8;
+  border-color: #777;
+  background-color: #eee;
 }
 .pseudocheckbox input[type="checkbox"]:checked + label:after {
-  content: "\4b";
-  position: absolute;
-  font-size: 11px;
-  color: #fff;
-  top: 7px;
-  left: 3px;
-  font-family: "igrodar" !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  vertical-align: middle;
+  opacity: 1;
 }
 .nav ul {
   list-style-type: none;

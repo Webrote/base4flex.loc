@@ -1,13 +1,3 @@
-$radio-cx ?= $radio-before-size / 2
-$radio-cy ?= 50%
-
-$radio-before-cx ?= $radio-cx - ($radio-before-size / 2)
-$radio-before-cy ?= 'calc(%s - %s)' %($radio-cy ($radio-before-size / 2))
-
-$radio-after-cx ?= $radio-cx - ($radio-after-size / 2)
-$radio-after-cy ?= 'calc(%s - %s)' %($radio-cy ($radio-after-size / 2))
-
-
 .pseudoradio
 	&__margin
 		margin-bottom 10px 
@@ -28,34 +18,26 @@ $radio-after-cy ?= 'calc(%s - %s)' %($radio-cy ($radio-after-size / 2))
 		& + label:after
 			content "" 
 			position absolute
+			border-radius 50% 
 			
 		& + label:before
-			left $radio-before-cx
-			top $radio-before-cy
-			width $radio-before-size
-			height $radio-before-size
-			// border 1px solid $black
-			border-radius 20px 
-			background-color $radio-before-bg
+			pseudo-radio-before()
 		
 		& + label:after
-			left $radio-cx
-			top $radio-cy
 			width 0 
 			height 0
+			pseudo-radio-after()
 			transit(,100ms)
 		
 		&:checked	
 			& + label:after
-				left $radio-after-cx
-				top $radio-after-cy
-				width $radio-after-size
-				height $radio-after-size
-				border-radius 10px 
+				pseudo-radio-after-checked() 
 				background-color rgba($radio-after-bg,0.7)
 				
 	&.disabled
-		label
-			color rgba(85, 85, 85, 0.5)
-			&:before
-				background-color rgba(197, 198, 216, 0.5) !important
+		& input[type="radio"]
+			& + label
+				color rgba(85, 85, 85, 0.5)
+				&:before
+					background-color rgba(197, 198, 216, 0.5) !important
+					border-color rgba(197, 198, 216, 0.9) !important

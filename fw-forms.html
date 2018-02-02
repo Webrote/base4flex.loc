@@ -88,29 +88,29 @@
               <input class="form__control" type="text" placeholder="E-mail">
             </div>
           </div>
-          <div class="form__inline">
-            <div class="form__group pseudoradio">
-              <input type="radio" id="radio-1" name="radio" value="0" checked>
-              <label for="radio-1">Radio 1</label>
-            </div>
-            <div class="form__group pseudoradio">
-              <input type="radio" id="radio-2" name="radio" value="1">
-              <label for="radio-2">Radio 2</label>
-            </div>
-            <div class="form__group pseudoradio">
-              <input type="radio" id="radio-3" name="radio" value="1">
-              <label for="radio-3">Radio 3</label>
-            </div>
+          <div class="form__group pseudoradio">
+            <input type="radio" id="radio-1" name="radio" value="0" checked hidden>
+            <label for="radio-1">Radio 1</label>
           </div>
-          <div class="form__inline">
-            <div class="form__group pseudocheckbox">
-              <input type="checkbox" id="filter-developing" name="filter-developing" value="">
-              <label for="filter-developing">Развивающие</label>
-            </div>
-            <div class="form__group pseudocheckbox">
-              <input type="checkbox" id="filter-learning" name="filter-learning" value="">
-              <label for="filter-learning">Обучающие</label>
-            </div>
+          <div class="form__group pseudoradio">
+            <input type="radio" id="radio-2" name="radio" value="1" hidden>
+            <label for="radio-2">Radio 2</label>
+          </div>
+          <div class="form__group pseudoradio disabled">
+            <input type="radio" id="radio-3" name="radio" value="1" disabled hidden>
+            <label for="radio-3">Radio 3</label>
+          </div>
+          <div class="form__group pseudocheckbox">
+            <input type="checkbox" id="checkbox-1" name="checkbox-1" value="" hidden>
+            <label for="checkbox-1">Check-box-1</label>
+          </div>
+          <div class="form__group pseudocheckbox">
+            <input type="checkbox" id="checkbox-2" name="checkbox-2" value="" hidden>
+            <label for="checkbox-2">Check-box-2</label>
+          </div>
+          <div class="form__group pseudocheckbox">
+            <input type="checkbox" id="checkbox-3" name="checkbox-3" value="" hidden>
+            <label for="checkbox-3">Check-box-3</label>
           </div>
           <button>Submit</button>
           <input type="reset" value="Reset">

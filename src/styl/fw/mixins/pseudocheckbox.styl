@@ -1,0 +1,25 @@
+$checkbox-cx ?= $checkbox-before-size / 2
+$checkbox-cy ?= 50%
+
+$checkbox-before-cx ?= $checkbox-cx - ($checkbox-before-size / 2)
+$checkbox-before-cy ?= 'calc(%s - %s)' %($checkbox-cy ($checkbox-before-size / 2))
+
+pseudo-checkbox-before()
+	left $checkbox-before-cx
+	top $checkbox-before-cy
+	width $checkbox-before-size
+	height $checkbox-before-size
+	border-radius $checkbox-before-border-radius
+
+	if $checkbox-befor-border
+		border-width $checkbox-before-border-width
+		border-color $checkbox-before-border-color 
+		border-style solid 
+		
+	if $checkbox-befor-bg 
+		background-color $checkbox-before-bg 
+		
+pseudo-checkbox-after()
+	left $checkbox-cx
+	top $checkbox-cy
+	transform translate(-50%, -50%) rotateZ(45deg)

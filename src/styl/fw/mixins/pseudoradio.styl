@@ -1,0 +1,33 @@
+$radio-cx ?= $radio-before-size / 2
+$radio-cy ?= 50%
+
+$radio-before-cx ?= $radio-cx - ($radio-before-size / 2)
+$radio-before-cy ?= 'calc(%s - %s)' %($radio-cy ($radio-before-size / 2))
+
+$radio-after-cx ?= $radio-cx - ($radio-after-size / 2)
+$radio-after-cy ?= 'calc(%s - %s)' %($radio-cy ($radio-after-size / 2))
+
+pseudo-radio-before()
+	left $radio-before-cx
+	top $radio-before-cy
+	width $radio-before-size
+	height $radio-before-size
+	
+	if $radio-befor-border
+		border-width $radio-before-border-width 
+		border-style solid 
+		border-color $radio-before-border-color 
+		
+	if $radio-befor-bg
+		background-color $radio-before-bg
+		
+
+pseudo-radio-after()
+	left $radio-cx
+	top $radio-cy
+	
+pseudo-radio-after-checked()
+	left $radio-after-cx
+	top $radio-after-cy
+	width $radio-after-size
+	height $radio-after-size

@@ -192,10 +192,33 @@ $burger-pseudo-offset ?= $_burger-pseudo-between + $burger-one-height
 // == Pseudo form elements
 // 
 // Pseudo radio
-$radio-before-size ?= 			14px // Должно быть четно, что бы избежать смещения на 0.5px
-$radio-after-size ?= 			6px
-$radio-before-bg ?= 			#ccc
-$radio-after-bg ?= 				#333
+$radio-befor-border ?= 				true
+$radio-befor-bg ?= 					true
+
+$radio-before-size ?= 				14px // Должно быть четно, что бы избежать смещения на 0.5px
+$radio-after-size ?= 				6px
+
+$radio-before-border-width ?=		2px
+$radio-before-border-color ?= 		#555
+$radio-before-bg ?= 				#ccc
+
+$radio-after-bg ?= 					#333
+
+// Pseudo radio
+
+$checkbox-befor-border ?= 			true
+$checkbox-befor-bg ?= 				true
+
+$checkbox-before-size ?= 			18px
+
+$checkbox-before-border-radius ?=	4px
+$checkbox-before-border-width ?=	2px
+$checkbox-before-border-color ?= 	#555
+$checkbox-before-bg ?= 				#ccc
+
+$checkbox-before-border-color-checked ?= 	#777
+$checkbox-before-bg-checked ?= 				#eee
+
 
 // Прижимаем футер к низу страницы
 $footer-height ?=				100px
