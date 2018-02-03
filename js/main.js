@@ -101,9 +101,16 @@ var site = {
 		});
 
 	},
+
+	__rangeInput: function () {
+		$('#example-range').change(function(event) {
+			// console.log($(this).val());
+		});
+	},
 };
 site.init = function () {
 	site.__pseudoSelect();
+	site.__rangeInput();
 };
 $(function () {
 	site.init();

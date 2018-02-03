@@ -26,26 +26,55 @@
 		margin-bottom 30px
 		
 	&__control
+		display block
 		width 100% 
 		height $form-control-height
 		padding .375rem .75rem
-		color #495057 
-		border-style solid 
-		border-width $form-control-border-width 
-		border-color $form-control-border-color 
-		border-radius 3px
-		background-color #fff
+		color $form-control-color
+		border $form-control-border-width solid $form-control-border-color 
+		border-radius $form-control-border-radius
+		background-color $form-control-bg
 		background-clip padding-box
-		font-size 1rem 
+		font-size $font-size-base
 		line-height 1.5
-		input-placeholder(color,#a7a7a7)
+		box-shadow $form-control-box-shadow
+		transit(,200ms)
+		input-placeholder(color,$form-control-placeholder-color)
 		
+		// Unstyle the caret on `<select>`s in IE10+.
+		&::-ms-expand
+			background-color transparent
+			border 0
+			
+		// Customize the `:focus` state to imitate native WebKit styles.
+		form-control-focus()
+		
+		&:disabled
+			border-color $form-control-disabled-border-color
+			background-color $form-control-disabled-bg
+			// iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+			opacity 1
+			
 		textarea&
 			max-width 100% 
 			min-width 100% 
 			max-height 130px
 			min-height $form-control-height
 			height 90px
+			
+		select&
+			&:not([size]):not([multiple]) 
+				height $form-control-height
+				
+			&:focus::-ms-value
+				color $form-control-color
+				background-color $form-control-bg
+		
+		&-file
+		&-range
+			display block
+			width 100% 		
+
 	
 	&__label
 		color #2B365F 

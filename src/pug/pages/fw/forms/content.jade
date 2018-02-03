@@ -1,92 +1,406 @@
-.container
-	form.form
+.fw-example
+	.container
+		h2 Symple input field
 
-		.form__inline
+		form.form
 			.form__group
-				label Name
-				input.form__control(type="text", placeholder="Name")
+				label(for="text-1") Name
+				input.form__control(type="text", placeholder="Name", id="text-1")
 
-			.form__group
-				label Surname
-				input.form__control(type="text", placeholder="Surname")
-	
-
-		.form__inline
-			.form__group
-				label Phone
-				input.form__control(type="text", placeholder="Phone")
-
-			.form__group
-				label E-mail
-				input.form__control(type="text", placeholder="E-mail")
-
-			.form__group
-				label E-mail
-				input.form__control(type="text", placeholder="E-mail")
-
-		.form__group
-			label Message
-			textarea.form__control(name="", placeholder="Message..")
+		.sample
+			pre
+				code(class="html").
+					&lt;form class="form"&gt;
+						&lt;div class="form__group"&gt;
+							&lt;label for="text-1"&gt;Name&lt;/label&gt;
+							&lt;input class="form__control" type="text" placeholder="Name" id="text-1"&gt;
+						&lt;/div&gt;
+					&lt;/form&gt;
 		
+		h2 Symple textarea
+		form.form
+			.form__group
+				label Message
+				textarea.form__control(name="", placeholder="Message..")
+
+		.sample
+			pre
+				code(class="html").
+					&lt;form class="form"&gt;
+						&lt;div class="form__group"&gt;
+							&lt;label&gt;Message&lt;/label&gt;
+							&lt;textarea class="form__control" name="" placeholder="Message.."&gt;&lt;/textarea&gt;
+						&lt;/div&gt;
+					&lt;/form&gt;
+
+.fw-example
+	.container
+		h2 Two inline input fields (and disabled input)
 		
-		.form__inline
-			.form__group.form__select
-				a(href="" class="pseudoselect js-pseudoselect") 
-					span.pseudoselect__placer Select Options-1
-					span.pseudoselect__icon.i-triangle-down
-				ul.drop.js-drop
-					li(data-id="0") Option 1
-					li(data-id="1") Option 2
-					li.active(data-id="2") Option 3
-					li(data-id="3") Option 4
-					li(data-id="4") Option 5
-					li(data-id="5") Option 6
-				input(type="hidden", name="select-1", id="select-1")
+		form.form
+			.form__inline
+				.form__group
+					label Surname
+					input.form__control(type="text", placeholder="Surname")
 
-			.form__group.form__select
-				a(href="" class="pseudoselect js-pseudoselect disabled") 
-					span.pseudoselect__placer Select Options-2
-					span.pseudoselect__icon
-				ul.drop.js-drop
-					li(data-id="0") Option 1
-					li(data-id="1") Option 2
-					li.active(data-id="2") Option 3
-					li(data-id="3") Option 4
-					li(data-id="4") Option 5
-					li(data-id="5") Option 6
-				input(type="hidden", name="select-2", id="select-2")
+				.form__group
+					label Patronymic
+					input.form__control(type="text", placeholder="Patronymic", disabled)
 
-		.form__group.pseudoradio
-			input(type="radio",id="radio-1",name="radio", value="0",checked,hidden)
-			label(for="radio-1") Radio 1
+		.sample
+			pre
+				code(class="html").
+					&lt;form class="form"&gt;
+						&lt;div class="form__inline"&gt;
+							&lt;div class="form__group"&gt;
+								&lt;label&gt;Surname&lt;/label&gt;
+								&lt;input class="form__control" type="text" placeholder="Surname"&gt;
+							&lt;/div&gt;
+							&lt;div class="form__group"&gt;
+								&lt;label&gt;Patronymic&lt;/label&gt;
+								&lt;input class="form__control" type="text" placeholder="Patronymic" disabled=""&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/form&gt;
 
-		.form__group.pseudoradio
-			input(type="radio",id="radio-2",name="radio", value="1",hidden)
-			label(for="radio-2") Radio 2
+.fw-example
+	.container
+		h2 Three inline input fields
+		
+		form.form
+			.form__inline
+				.form__group
+					label Phone
+					input.form__control(type="text", placeholder="Phone")
 
-		.form__group.pseudoradio.disabled
-			input(type="radio",id="radio-3",name="radio", value="1", disabled,hidden)
-			label(for="radio-3") Radio 3
+				.form__group
+					label E-mail
+					input.form__control(type="text", placeholder="E-mail")
 
-		.form__group.pseudocheckbox
-			input(type="checkbox",id="checkbox-1",name="checkbox-1", value="" hidden)
-			label(for="checkbox-1") Check-box-1
+				.form__group
+					label E-mail
+					input.form__control(type="text", placeholder="E-mail")
 
-		.form__group.pseudocheckbox
-			input(type="checkbox",id="checkbox-2",name="checkbox-2", value="" hidden)
-			label(for="checkbox-2") Check-box-2
+		.sample
+			pre
+				code(class="html").
+					&lt;form class="form"&gt;
+						&lt;div class="form__inline"&gt;
+							&lt;div class="form__group"&gt;
+								&lt;label&gt;Phone&lt;/label&gt;
+								&lt;input class="form__control" type="text" placeholder="Phone"&gt;
+							&lt;/div&gt;
+							&lt;div class="form__group"&gt;
+								&lt;label&gt;E-mail&lt;/label&gt;
+								&lt;input class="form__control" type="text" placeholder="E-mail"&gt;
+							&lt;/div&gt;
+							&lt;div class="form__group"&gt;
+								&lt;label&gt;E-mail&lt;/label&gt;
+								&lt;input class="form__control" type="text" placeholder="E-mail"&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/form&gt;
 
-		.form__group.pseudocheckbox.disabled
-			input(type="checkbox",id="checkbox-3",name="checkbox-3", value="", disabled, hidden)
-			label(for="checkbox-3") Check-box-3
+.fw-example
+	.container
+		h2 Default select element
+		
+		form.form
+			.form__inline
+				.form__group
+					label select
+					select.form__control(name="")
+						option 1
+						option 2
+						option 3
+						option 4
+						option 5
+				.form__group
+					label select
+					select.form__control(name="")
+						option 1
+						option 2
+						option 3
+						option 4
+						option 5
+		
+		.sample
+			pre
+				code(class="html").
+					&lt;form class="form"&gt;
+						&lt;div class="form__inline"&gt;
+							&lt;div class="form__group"&gt;
+								&lt;label&gt;select&lt;/label&gt;
+								&lt;select class="form__control" name=""&gt;
+									&lt;option&gt;1&lt;/option&gt;
+									&lt;option&gt;2&lt;/option&gt;
+									&lt;option&gt;3&lt;/option&gt;
+									&lt;option&gt;4&lt;/option&gt;
+									&lt;option&gt;5&lt;/option&gt;
+								&lt;/select&gt;
+							&lt;/div&gt;
+							&lt;div class="form__group"&gt;
+								&lt;label&gt;select&lt;/label&gt;
+								&lt;select class="form__control" name=""&gt;
+									&lt;option&gt;1&lt;/option&gt;
+									&lt;option&gt;2&lt;/option&gt;
+									&lt;option&gt;3&lt;/option&gt;
+									&lt;option&gt;4&lt;/option&gt;
+									&lt;option&gt;5&lt;/option&gt;
+								&lt;/select&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/form&gt;
 
+.fw-example
+	.container
+		h2 Pseudo select (disabled select)
+
+		form.form
+			.form__inline
+				.form__group.form__select
+					a(href="" class="pseudoselect js-pseudoselect") 
+						span.pseudoselect__placer Select Options-1
+						span.pseudoselect__icon.i-triangle-down
+					ul.drop.js-drop
+						li(data-id="0") Option 1
+						li(data-id="1") Option 2
+						li.active(data-id="2") Option 3
+						li(data-id="3") Option 4
+						li(data-id="4") Option 5
+						li(data-id="5") Option 6
+					input(type="hidden", name="select-1", id="select-1")
+
+				.form__group.form__select
+					a(href="" class="pseudoselect js-pseudoselect disabled") 
+						span.pseudoselect__placer Select Options-2
+						span.pseudoselect__icon
+					ul.drop.js-drop
+						li(data-id="0") Option 1
+						li(data-id="1") Option 2
+						li.active(data-id="2") Option 3
+						li(data-id="3") Option 4
+						li(data-id="4") Option 5
+						li(data-id="5") Option 6
+					input(type="hidden", name="select-2", id="select-2")
+
+		.sample
+			pre
+				code(class="html").
+					&lt;form class="form"&gt;
+						&lt;div class="form__inline"&gt;
+							&lt;div class="form__group form__select"&gt;
+								&lt;a class="pseudoselect js-pseudoselect" href="" title=" Select Options-1"&gt;
+									&lt;span class="pseudoselect__placer"&gt;Select Options-1&lt;/span&gt;
+									&lt;span class="pseudoselect__icon i-triangle-down"&gt;&lt;/span&gt;
+								&lt;/a&gt;
+								&lt;ul class="drop js-drop"&gt;
+									&lt;li data-id="0"&gt;Option 1&lt;/li&gt;
+									&lt;li data-id="1"&gt;Option 2&lt;/li&gt;
+									&lt;li class="active" data-id="2"&gt;Option 3&lt;/li&gt;
+									&lt;li data-id="3"&gt;Option 4&lt;/li&gt;
+									&lt;li data-id="4"&gt;Option 5&lt;/li&gt;
+									&lt;li data-id="5"&gt;Option 6&lt;/li&gt;
+								&lt;/ul&gt;
+								&lt;input type="hidden" name="select-1" id="select-1"&gt;
+							&lt;/div&gt;
+
+							&lt;div class="form__group form__select"&gt;
+								&lt;a class="pseudoselect js-pseudoselect disabled" href="" title=" Select Options-2"&gt;
+									&lt;span class="pseudoselect__placer"&gt;Select Options-2&lt;/span&gt;
+									&lt;span class="pseudoselect__icon"&gt;&lt;/span&gt;
+								&lt;/a&gt;
+								&lt;ul class="drop js-drop"&gt;
+									&lt;li data-id="0"&gt;Option 1&lt;/li&gt;
+									&lt;li data-id="1"&gt;Option 2&lt;/li&gt;
+									&lt;li class="active" data-id="2"&gt;Option 3&lt;/li&gt;
+									&lt;li data-id="3"&gt;Option 4&lt;/li&gt;
+									&lt;li data-id="4"&gt;Option 5&lt;/li&gt;
+									&lt;li data-id="5"&gt;Option 6&lt;/li&gt;
+								&lt;/ul&gt;
+								&lt;input type="hidden" name="select-2" id="select-2"&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/form&gt;
+
+.fw-example
+	.container
+		h2 Default radio buttons
+		form.form
+			.form__group
+				input(type="radio",id="radio-1",name="radio", value="0",checked)
+				label(for="radio-1") Radio 1
+			.form__group
+				input(type="radio",id="radio-2",name="radio", value="1")
+				label(for="radio-2") Radio 2
+			.form__group
+				input(type="radio",id="radio-3",name="radio", value="2", disabled)
+				label(for="radio-3") Radio 3
 		
 
+		.sample
+			pre
+				code(class="html").
+					&lt;form class="form"&gt;
+						&lt;div class="form__group"&gt;
+							&lt;input type="radio" id="radio-1" name="radio" value="0" checked&gt;
+							&lt;label for="radio-1"&gt;Radio 1&lt;/label&gt;
+						&lt;/div&gt;
+						&lt;div class="form__group"&gt;
+							&lt;input type="radio" id="radio-2" name="radio" value="1"&gt;
+							&lt;label for="radio-2"&gt;Radio 2&lt;/label&gt;
+						&lt;/div&gt;
+						&lt;div class="form__group"&gt;
+							&lt;input type="radio" id="radio-3" name="radio" value="2" disabled&gt;
+							&lt;label for="radio-3"&gt;Radio 3&lt;/label&gt;
+						&lt;/div&gt;
+					&lt;/form&gt;
 
-		button Submit
-		input(type="reset" value="Reset")
+.fw-example
+	.container
+		h2 Pseudo radio
+
+		form.form
+			.form__group.pseudoradio
+				input(type="radio",id="pseudo-radio-1",name="pseudo-radio", value="0",checked,hidden)
+				label(for="pseudo-radio-1") Pseudo radio 1
+
+			.form__group.pseudoradio
+				input(type="radio",id="pseudo-radio-2",name="pseudo-radio", value="1",hidden)
+				label(for="pseudo-radio-2") Pseudo radio 2
+
+			.form__group.pseudoradio.disabled
+				input(type="radio",id="pseudo-radio-3",name="pseudo-radio", value="1", disabled,hidden)
+				label(for="pseudo-radio-3") Pseudo radio 3
 
 
-.container
-	+pagination()
+		.sample
+			pre
+				code(class="html").
+					&lt;form class="form"&gt;
+						&lt;div class="form__group pseudoradio"&gt;
+							&lt;input type="radio" id="pseudo-radio-1" name="pseudo-radio" value="0" checked hidden&gt;
+							&lt;label for="pseudo-radio-1"&gt;Pseudo radio 1&lt;/label&gt;
+						&lt;/div&gt;
+						&lt;div class="form__group pseudoradio"&gt;
+							&lt;input type="radio" id="pseudo-radio-2" name="pseudo-radio" value="1" hidden&gt;
+							&lt;label for="pseudo-radio-2"&gt;Pseudo radio 2&lt;/label&gt;
+						&lt;/div&gt;
+						&lt;div class="form__group pseudoradio disabled"&gt;
+							&lt;input type="radio" id="pseudo-radio-3" name="pseudo-radio" value="1" disabled hidden&gt;
+							&lt;label for="pseudo-radio-3"&gt;Pseudo radio 3&lt;/label&gt;
+						&lt;/div&gt;
+					&lt;/form&gt;
+
+.fw-example
+	.container
+		h2 Default check-box buttons
+		form.form
+			.form__group
+				input(type="checkbox",id="checkbox-1",name="checkbox-1", value="")
+				label(for="checkbox-1") Check-box-1
+
+			.form__group
+				input(type="checkbox",id="checkbox-2",name="checkbox-2", value="")
+				label(for="checkbox-2") Check-box-2
+
+			.form__group.disabled
+				input(type="checkbox",id="checkbox-3",name="checkbox-3", value="", disabled)
+				label(for="checkbox-3") Check-box-3
+
+		.sample
+			pre
+				code(class="html").
+					&lt;form class="form"&gt;
+						&lt;div class="form__group"&gt;
+							&lt;input type="checkbox" id="checkbox-1" name="checkbox-1" value=""&gt;
+							&lt;label for="checkbox-1"&gt;Check-box-1&lt;/label&gt;
+						&lt;/div&gt;
+						&lt;div class="form__group"&gt;
+							&lt;input type="checkbox" id="checkbox-2" name="checkbox-2" value=""&gt;
+							&lt;label for="checkbox-2"&gt;Check-box-2&lt;/label&gt;
+						&lt;/div&gt;
+						&lt;div class="form__group disabled"&gt;
+							&lt;input type="checkbox" id="checkbox-3" name="checkbox-3" value="" disabled=""&gt;
+							&lt;label for="checkbox-3"&gt;Check-box-3&lt;/label&gt;
+						&lt;/div&gt;
+					&lt;/form&gt;
+
+.fw-example
+	.container
+		h2 Pseudo check-box
+		form.form
+			.form__group.pseudocheckbox
+				input(type="checkbox",id="pseudo-checkbox-1",name="pseudo-checkbox-1", value="" hidden)
+				label(for="pseudo-checkbox-1") Check-box-1
+
+			.form__group.pseudocheckbox
+				input(type="checkbox",id="pseudo-checkbox-2",name="pseudo-checkbox-2", value="" hidden)
+				label(for="pseudo-checkbox-2") Check-box-2
+
+			.form__group.pseudocheckbox.disabled
+				input(type="checkbox",id="pseudo-checkbox-3",name="pseudo-checkbox-3", value="", disabled, hidden)
+				label(for="pseudo-checkbox-3") Check-box-3
+
+		.sample
+			pre
+				code(class="html").
+					&lt;form class="form"&gt;
+						&lt;div class="form__group pseudocheckbox"&gt;
+							&lt;input type="checkbox" id="pseudo-checkbox-1" name="pseudo-checkbox-1" value="" hidden=""&gt;
+							&lt;label for="pseudo-checkbox-1"&gt;Check-box-1&lt;/label&gt;
+						&lt;/div&gt;
+						&lt;div class="form__group pseudocheckbox"&gt;
+							&lt;input type="checkbox" id="pseudo-checkbox-2" name="pseudo-checkbox-2" value="" hidden=""&gt;
+							&lt;label for="pseudo-checkbox-2"&gt;Check-box-2&lt;/label&gt;
+						&lt;/div&gt;
+						&lt;div class="form__group pseudocheckbox disabled"&gt;
+							&lt;input type="checkbox" id="pseudo-checkbox-3" name="pseudo-checkbox-3" value="" disabled="" hidden=""&gt;
+							&lt;label for="pseudo-checkbox-3"&gt;Check-box-3&lt;/label&gt;
+						&lt;/div&gt;
+					&lt;/form&gt;
+
+.fw-example
+	.container
+		h2 File input
+		form.form
+			.form__group
+				label(for="file") Example file input
+				input.form__control-file(type="file", id="file")
+		.sample
+			pre
+				code(class="html").
+					&lt;form class="form"&gt;
+						&lt;div class="form__group"&gt;
+							&lt;label for="file"&gt;Example file input&lt;/label&gt;
+							&lt;input class="form__control-file" type="file" id="file"&gt;
+						&lt;/div&gt;
+					&lt;/form&gt;
+
+.fw-example
+	.container
+		h2 Rage input
+		form.form
+			.form__group
+				input.form__control-range(type="range", id="example-range")
+			
+			button Submit
+			input(type="reset" value="Reset")
+		
+		.sample
+			pre
+				code(class="html").
+					&lt;form class="form"&gt;
+						&lt;div class="form__group"&gt;
+							&lt;input class="form__control-range" type="range" id="example-range"&gt;
+						&lt;/div&gt;
+						&lt;button&gt;Submit&lt;/button&gt;
+						&lt;input type="reset" value="Reset"&gt;
+					&lt;/form&gt;
+
+.fw-example
+	.container
+		h2 Pagination
+
+		+pagination()
 		

@@ -8,6 +8,12 @@
     <title>Title</title><!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+    <link rel="stylesheet" href="libraries/highlight/default.css">
+    <script src="libraries/highlight/highlight.pack.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+      
+    </script>
     <link href="css/main.css" rel="stylesheet">
   </head>
   <body>
@@ -68,102 +74,442 @@
       <div class="container">
         <h1>Forms elements</h1>
       </div>
-      <div class="container">
-        <form class="form">
-          <div class="form__inline">
+      <div class="fw-example">
+        <div class="container">
+          <h2>Symple input field</h2>
+          <form class="form">
             <div class="form__group">
-              <label>Name</label>
-              <input class="form__control" type="text" placeholder="Name">
+              <label for="text-1">Name</label>
+              <input class="form__control" type="text" placeholder="Name" id="text-1">
             </div>
+          </form>
+          <div class="sample">
+            <pre><code class="html">&lt;form class="form"&gt;
+	&lt;div class="form__group"&gt;
+		&lt;label for="text-1"&gt;Name&lt;/label&gt;
+		&lt;input class="form__control" type="text" placeholder="Name" id="text-1"&gt;
+	&lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+          </div>
+          <h2>Symple textarea</h2>
+          <form class="form">
             <div class="form__group">
-              <label>Surname</label>
-              <input class="form__control" type="text" placeholder="Surname">
+              <label>Message</label>
+              <textarea class="form__control" name="" placeholder="Message.."></textarea>
             </div>
+          </form>
+          <div class="sample">
+            <pre><code class="html">&lt;form class="form"&gt;
+	&lt;div class="form__group"&gt;
+		&lt;label&gt;Message&lt;/label&gt;
+		&lt;textarea class="form__control" name="" placeholder="Message.."&gt;&lt;/textarea&gt;
+	&lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
           </div>
-          <div class="form__inline">
-            <div class="form__group">
-              <label>Phone</label>
-              <input class="form__control" type="text" placeholder="Phone">
-            </div>
-            <div class="form__group">
-              <label>E-mail</label>
-              <input class="form__control" type="text" placeholder="E-mail">
-            </div>
-            <div class="form__group">
-              <label>E-mail</label>
-              <input class="form__control" type="text" placeholder="E-mail">
-            </div>
-          </div>
-          <div class="form__group">
-            <label>Message</label>
-            <textarea class="form__control" name="" placeholder="Message.."></textarea>
-          </div>
-          <div class="form__inline">
-            <div class="form__group form__select"><a class="pseudoselect js-pseudoselect" href=""> <span class="pseudoselect__placer">Select Options-1</span><span class="pseudoselect__icon i-triangle-down"></span></a>
-              <ul class="drop js-drop">
-                <li data-id="0">Option 1</li>
-                <li data-id="1">Option 2</li>
-                <li class="active" data-id="2">Option 3</li>
-                <li data-id="3">Option 4</li>
-                <li data-id="4">Option 5</li>
-                <li data-id="5">Option 6</li>
-              </ul>
-              <input type="hidden" name="select-1" id="select-1">
-            </div>
-            <div class="form__group form__select"><a class="pseudoselect js-pseudoselect disabled" href=""> <span class="pseudoselect__placer">Select Options-2</span><span class="pseudoselect__icon"></span></a>
-              <ul class="drop js-drop">
-                <li data-id="0">Option 1</li>
-                <li data-id="1">Option 2</li>
-                <li class="active" data-id="2">Option 3</li>
-                <li data-id="3">Option 4</li>
-                <li data-id="4">Option 5</li>
-                <li data-id="5">Option 6</li>
-              </ul>
-              <input type="hidden" name="select-2" id="select-2">
-            </div>
-          </div>
-          <div class="form__group pseudoradio">
-            <input type="radio" id="radio-1" name="radio" value="0" checked hidden>
-            <label for="radio-1">Radio 1</label>
-          </div>
-          <div class="form__group pseudoradio">
-            <input type="radio" id="radio-2" name="radio" value="1" hidden>
-            <label for="radio-2">Radio 2</label>
-          </div>
-          <div class="form__group pseudoradio disabled">
-            <input type="radio" id="radio-3" name="radio" value="1" disabled hidden>
-            <label for="radio-3">Radio 3</label>
-          </div>
-          <div class="form__group pseudocheckbox">
-            <input type="checkbox" id="checkbox-1" name="checkbox-1" value="" hidden>
-            <label for="checkbox-1">Check-box-1</label>
-          </div>
-          <div class="form__group pseudocheckbox">
-            <input type="checkbox" id="checkbox-2" name="checkbox-2" value="" hidden>
-            <label for="checkbox-2">Check-box-2</label>
-          </div>
-          <div class="form__group pseudocheckbox disabled">
-            <input type="checkbox" id="checkbox-3" name="checkbox-3" value="" disabled hidden>
-            <label for="checkbox-3">Check-box-3</label>
-          </div>
-          <button>Submit</button>
-          <input type="reset" value="Reset">
-        </form>
+        </div>
       </div>
-      <div class="container">
-        <div class="pager-wrap">
-          <ul class="pager">
-            <li class="pager-previous first"><a href="" title="На предыдущую страницу">Назад</a></li>
-            <li class="pager-first"><a href="" title="На первую страницу">1</a></li>
-            <li class="pager-item"><a href="" title="На страницу номер 3">3</a></li>
-            <li class="pager-item"><a href="" title="На страницу номер 4">4</a></li>
-            <li class="pager-item"><a href="" title="На страницу номер 5">5</a></li>
-            <li class="pager-item"><a href="" title="На страницу номер 6">6</a></li>
-            <li class="pager-current"><span>7</span></li>
-            <li class="pager-ellipsis"> <span>…</span></li>
-            <li class="pager-last last"><a href="" title="На последнюю страницу">20</a></li>
-            <li class="pager-next"><a href="" title="На следующую страницу">Вперед</a></li>
-          </ul>
+      <div class="fw-example">
+        <div class="container">
+          <h2>Two inline input fields (and disabled input)</h2>
+          <form class="form">
+            <div class="form__inline">
+              <div class="form__group">
+                <label>Surname</label>
+                <input class="form__control" type="text" placeholder="Surname">
+              </div>
+              <div class="form__group">
+                <label>Patronymic</label>
+                <input class="form__control" type="text" placeholder="Patronymic" disabled>
+              </div>
+            </div>
+          </form>
+          <div class="sample">
+            <pre><code class="html">&lt;form class="form"&gt;
+	&lt;div class="form__inline"&gt;
+		&lt;div class="form__group"&gt;
+			&lt;label&gt;Surname&lt;/label&gt;
+			&lt;input class="form__control" type="text" placeholder="Surname"&gt;
+		&lt;/div&gt;
+		&lt;div class="form__group"&gt;
+			&lt;label&gt;Patronymic&lt;/label&gt;
+			&lt;input class="form__control" type="text" placeholder="Patronymic" disabled=""&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="fw-example">
+        <div class="container">
+          <h2>Three inline input fields</h2>
+          <form class="form">
+            <div class="form__inline">
+              <div class="form__group">
+                <label>Phone</label>
+                <input class="form__control" type="text" placeholder="Phone">
+              </div>
+              <div class="form__group">
+                <label>E-mail</label>
+                <input class="form__control" type="text" placeholder="E-mail">
+              </div>
+              <div class="form__group">
+                <label>E-mail</label>
+                <input class="form__control" type="text" placeholder="E-mail">
+              </div>
+            </div>
+          </form>
+          <div class="sample">
+            <pre><code class="html">&lt;form class="form"&gt;
+	&lt;div class="form__inline"&gt;
+		&lt;div class="form__group"&gt;
+			&lt;label&gt;Phone&lt;/label&gt;
+			&lt;input class="form__control" type="text" placeholder="Phone"&gt;
+		&lt;/div&gt;
+		&lt;div class="form__group"&gt;
+			&lt;label&gt;E-mail&lt;/label&gt;
+			&lt;input class="form__control" type="text" placeholder="E-mail"&gt;
+		&lt;/div&gt;
+		&lt;div class="form__group"&gt;
+			&lt;label&gt;E-mail&lt;/label&gt;
+			&lt;input class="form__control" type="text" placeholder="E-mail"&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="fw-example">
+        <div class="container">
+          <h2>Default select element</h2>
+          <form class="form">
+            <div class="form__inline">
+              <div class="form__group">
+                <label>select</label>
+                <select class="form__control" name="">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="form__group">
+                <label>select</label>
+                <select class="form__control" name="">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+            </div>
+          </form>
+          <div class="sample">
+            <pre><code class="html">&lt;form class="form"&gt;
+	&lt;div class="form__inline"&gt;
+		&lt;div class="form__group"&gt;
+			&lt;label&gt;select&lt;/label&gt;
+			&lt;select class="form__control" name=""&gt;
+				&lt;option&gt;1&lt;/option&gt;
+				&lt;option&gt;2&lt;/option&gt;
+				&lt;option&gt;3&lt;/option&gt;
+				&lt;option&gt;4&lt;/option&gt;
+				&lt;option&gt;5&lt;/option&gt;
+			&lt;/select&gt;
+		&lt;/div&gt;
+		&lt;div class="form__group"&gt;
+			&lt;label&gt;select&lt;/label&gt;
+			&lt;select class="form__control" name=""&gt;
+				&lt;option&gt;1&lt;/option&gt;
+				&lt;option&gt;2&lt;/option&gt;
+				&lt;option&gt;3&lt;/option&gt;
+				&lt;option&gt;4&lt;/option&gt;
+				&lt;option&gt;5&lt;/option&gt;
+			&lt;/select&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="fw-example">
+        <div class="container">
+          <h2>Pseudo select (disabled select)</h2>
+          <form class="form">
+            <div class="form__inline">
+              <div class="form__group form__select"><a class="pseudoselect js-pseudoselect" href=""> <span class="pseudoselect__placer">Select Options-1</span><span class="pseudoselect__icon i-triangle-down"></span></a>
+                <ul class="drop js-drop">
+                  <li data-id="0">Option 1</li>
+                  <li data-id="1">Option 2</li>
+                  <li class="active" data-id="2">Option 3</li>
+                  <li data-id="3">Option 4</li>
+                  <li data-id="4">Option 5</li>
+                  <li data-id="5">Option 6</li>
+                </ul>
+                <input type="hidden" name="select-1" id="select-1">
+              </div>
+              <div class="form__group form__select"><a class="pseudoselect js-pseudoselect disabled" href=""> <span class="pseudoselect__placer">Select Options-2</span><span class="pseudoselect__icon"></span></a>
+                <ul class="drop js-drop">
+                  <li data-id="0">Option 1</li>
+                  <li data-id="1">Option 2</li>
+                  <li class="active" data-id="2">Option 3</li>
+                  <li data-id="3">Option 4</li>
+                  <li data-id="4">Option 5</li>
+                  <li data-id="5">Option 6</li>
+                </ul>
+                <input type="hidden" name="select-2" id="select-2">
+              </div>
+            </div>
+          </form>
+          <div class="sample">
+            <pre><code class="html">&lt;form class="form"&gt;
+	&lt;div class="form__inline"&gt;
+		&lt;div class="form__group form__select"&gt;
+			&lt;a class="pseudoselect js-pseudoselect" href="" title=" Select Options-1"&gt;
+				&lt;span class="pseudoselect__placer"&gt;Select Options-1&lt;/span&gt;
+				&lt;span class="pseudoselect__icon i-triangle-down"&gt;&lt;/span&gt;
+			&lt;/a&gt;
+			&lt;ul class="drop js-drop"&gt;
+				&lt;li data-id="0"&gt;Option 1&lt;/li&gt;
+				&lt;li data-id="1"&gt;Option 2&lt;/li&gt;
+				&lt;li class="active" data-id="2"&gt;Option 3&lt;/li&gt;
+				&lt;li data-id="3"&gt;Option 4&lt;/li&gt;
+				&lt;li data-id="4"&gt;Option 5&lt;/li&gt;
+				&lt;li data-id="5"&gt;Option 6&lt;/li&gt;
+			&lt;/ul&gt;
+			&lt;input type="hidden" name="select-1" id="select-1"&gt;
+		&lt;/div&gt;
+
+		&lt;div class="form__group form__select"&gt;
+			&lt;a class="pseudoselect js-pseudoselect disabled" href="" title=" Select Options-2"&gt;
+				&lt;span class="pseudoselect__placer"&gt;Select Options-2&lt;/span&gt;
+				&lt;span class="pseudoselect__icon"&gt;&lt;/span&gt;
+			&lt;/a&gt;
+			&lt;ul class="drop js-drop"&gt;
+				&lt;li data-id="0"&gt;Option 1&lt;/li&gt;
+				&lt;li data-id="1"&gt;Option 2&lt;/li&gt;
+				&lt;li class="active" data-id="2"&gt;Option 3&lt;/li&gt;
+				&lt;li data-id="3"&gt;Option 4&lt;/li&gt;
+				&lt;li data-id="4"&gt;Option 5&lt;/li&gt;
+				&lt;li data-id="5"&gt;Option 6&lt;/li&gt;
+			&lt;/ul&gt;
+			&lt;input type="hidden" name="select-2" id="select-2"&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="fw-example">
+        <div class="container">
+          <h2>Default radio buttons</h2>
+          <form class="form">
+            <div class="form__group">
+              <input type="radio" id="radio-1" name="radio" value="0" checked>
+              <label for="radio-1">Radio 1</label>
+            </div>
+            <div class="form__group">
+              <input type="radio" id="radio-2" name="radio" value="1">
+              <label for="radio-2">Radio 2</label>
+            </div>
+            <div class="form__group">
+              <input type="radio" id="radio-3" name="radio" value="2" disabled>
+              <label for="radio-3">Radio 3</label>
+            </div>
+          </form>
+          <div class="sample">
+            <pre><code class="html">&lt;form class="form"&gt;
+	&lt;div class="form__group"&gt;
+		&lt;input type="radio" id="radio-1" name="radio" value="0" checked&gt;
+		&lt;label for="radio-1"&gt;Radio 1&lt;/label&gt;
+	&lt;/div&gt;
+	&lt;div class="form__group"&gt;
+		&lt;input type="radio" id="radio-2" name="radio" value="1"&gt;
+		&lt;label for="radio-2"&gt;Radio 2&lt;/label&gt;
+	&lt;/div&gt;
+	&lt;div class="form__group"&gt;
+		&lt;input type="radio" id="radio-3" name="radio" value="2" disabled&gt;
+		&lt;label for="radio-3"&gt;Radio 3&lt;/label&gt;
+	&lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="fw-example">
+        <div class="container">
+          <h2>Pseudo radio</h2>
+          <form class="form">
+            <div class="form__group pseudoradio">
+              <input type="radio" id="pseudo-radio-1" name="pseudo-radio" value="0" checked hidden>
+              <label for="pseudo-radio-1">Pseudo radio 1</label>
+            </div>
+            <div class="form__group pseudoradio">
+              <input type="radio" id="pseudo-radio-2" name="pseudo-radio" value="1" hidden>
+              <label for="pseudo-radio-2">Pseudo radio 2</label>
+            </div>
+            <div class="form__group pseudoradio disabled">
+              <input type="radio" id="pseudo-radio-3" name="pseudo-radio" value="1" disabled hidden>
+              <label for="pseudo-radio-3">Pseudo radio 3</label>
+            </div>
+          </form>
+          <div class="sample">
+            <pre><code class="html">&lt;form class="form"&gt;
+	&lt;div class="form__group pseudoradio"&gt;
+		&lt;input type="radio" id="pseudo-radio-1" name="pseudo-radio" value="0" checked hidden&gt;
+		&lt;label for="pseudo-radio-1"&gt;Pseudo radio 1&lt;/label&gt;
+	&lt;/div&gt;
+	&lt;div class="form__group pseudoradio"&gt;
+		&lt;input type="radio" id="pseudo-radio-2" name="pseudo-radio" value="1" hidden&gt;
+		&lt;label for="pseudo-radio-2"&gt;Pseudo radio 2&lt;/label&gt;
+	&lt;/div&gt;
+	&lt;div class="form__group pseudoradio disabled"&gt;
+		&lt;input type="radio" id="pseudo-radio-3" name="pseudo-radio" value="1" disabled hidden&gt;
+		&lt;label for="pseudo-radio-3"&gt;Pseudo radio 3&lt;/label&gt;
+	&lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="fw-example">
+        <div class="container">
+          <h2>Default check-box buttons</h2>
+          <form class="form">
+            <div class="form__group">
+              <input type="checkbox" id="checkbox-1" name="checkbox-1" value="">
+              <label for="checkbox-1">Check-box-1</label>
+            </div>
+            <div class="form__group">
+              <input type="checkbox" id="checkbox-2" name="checkbox-2" value="">
+              <label for="checkbox-2">Check-box-2</label>
+            </div>
+            <div class="form__group disabled">
+              <input type="checkbox" id="checkbox-3" name="checkbox-3" value="" disabled>
+              <label for="checkbox-3">Check-box-3</label>
+            </div>
+          </form>
+          <div class="sample">
+            <pre><code class="html">&lt;form class="form"&gt;
+	&lt;div class="form__group"&gt;
+		&lt;input type="checkbox" id="checkbox-1" name="checkbox-1" value=""&gt;
+		&lt;label for="checkbox-1"&gt;Check-box-1&lt;/label&gt;
+	&lt;/div&gt;
+	&lt;div class="form__group"&gt;
+		&lt;input type="checkbox" id="checkbox-2" name="checkbox-2" value=""&gt;
+		&lt;label for="checkbox-2"&gt;Check-box-2&lt;/label&gt;
+	&lt;/div&gt;
+	&lt;div class="form__group disabled"&gt;
+		&lt;input type="checkbox" id="checkbox-3" name="checkbox-3" value="" disabled=""&gt;
+		&lt;label for="checkbox-3"&gt;Check-box-3&lt;/label&gt;
+	&lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="fw-example">
+        <div class="container">
+          <h2>Pseudo check-box</h2>
+          <form class="form">
+            <div class="form__group pseudocheckbox">
+              <input type="checkbox" id="pseudo-checkbox-1" name="pseudo-checkbox-1" value="" hidden>
+              <label for="pseudo-checkbox-1">Check-box-1</label>
+            </div>
+            <div class="form__group pseudocheckbox">
+              <input type="checkbox" id="pseudo-checkbox-2" name="pseudo-checkbox-2" value="" hidden>
+              <label for="pseudo-checkbox-2">Check-box-2</label>
+            </div>
+            <div class="form__group pseudocheckbox disabled">
+              <input type="checkbox" id="pseudo-checkbox-3" name="pseudo-checkbox-3" value="" disabled hidden>
+              <label for="pseudo-checkbox-3">Check-box-3</label>
+            </div>
+          </form>
+          <div class="sample">
+            <pre><code class="html">&lt;form class="form"&gt;
+	&lt;div class="form__group pseudocheckbox"&gt;
+		&lt;input type="checkbox" id="pseudo-checkbox-1" name="pseudo-checkbox-1" value="" hidden=""&gt;
+		&lt;label for="pseudo-checkbox-1"&gt;Check-box-1&lt;/label&gt;
+	&lt;/div&gt;
+	&lt;div class="form__group pseudocheckbox"&gt;
+		&lt;input type="checkbox" id="pseudo-checkbox-2" name="pseudo-checkbox-2" value="" hidden=""&gt;
+		&lt;label for="pseudo-checkbox-2"&gt;Check-box-2&lt;/label&gt;
+	&lt;/div&gt;
+	&lt;div class="form__group pseudocheckbox disabled"&gt;
+		&lt;input type="checkbox" id="pseudo-checkbox-3" name="pseudo-checkbox-3" value="" disabled="" hidden=""&gt;
+		&lt;label for="pseudo-checkbox-3"&gt;Check-box-3&lt;/label&gt;
+	&lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="fw-example">
+        <div class="container">
+          <h2>File input</h2>
+          <form class="form">
+            <div class="form__group">
+              <label for="file">Example file input</label>
+              <input class="form__control-file" type="file" id="file">
+            </div>
+          </form>
+          <div class="sample">
+            <pre><code class="html">&lt;form class="form"&gt;
+	&lt;div class="form__group"&gt;
+		&lt;label for="file"&gt;Example file input&lt;/label&gt;
+		&lt;input class="form__control-file" type="file" id="file"&gt;
+	&lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="fw-example">
+        <div class="container">
+          <h2>Rage input</h2>
+          <form class="form">
+            <div class="form__group">
+              <input class="form__control-range" type="range" id="example-range">
+            </div>
+            <button>Submit</button>
+            <input type="reset" value="Reset">
+          </form>
+          <div class="sample">
+            <pre><code class="html">&lt;form class="form"&gt;
+	&lt;div class="form__group"&gt;
+		&lt;input class="form__control-range" type="range" id="example-range"&gt;
+	&lt;/div&gt;
+	&lt;button&gt;Submit&lt;/button&gt;
+	&lt;input type="reset" value="Reset"&gt;
+&lt;/form&gt;
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="fw-example">
+        <div class="container">
+          <h2>Pagination</h2>
+          <div class="pager-wrap">
+            <ul class="pager">
+              <li class="pager-previous first"><a href="" title="На предыдущую страницу">Назад</a></li>
+              <li class="pager-first"><a href="" title="На первую страницу">1</a></li>
+              <li class="pager-item"><a href="" title="На страницу номер 3">3</a></li>
+              <li class="pager-item"><a href="" title="На страницу номер 4">4</a></li>
+              <li class="pager-item"><a href="" title="На страницу номер 5">5</a></li>
+              <li class="pager-item"><a href="" title="На страницу номер 6">6</a></li>
+              <li class="pager-current"><span>7</span></li>
+              <li class="pager-ellipsis"> <span>…</span></li>
+              <li class="pager-last last"><a href="" title="На последнюю страницу">20</a></li>
+              <li class="pager-next"><a href="" title="На следующую страницу">Вперед</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
