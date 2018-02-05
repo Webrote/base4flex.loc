@@ -1,0 +1,32 @@
+.menu-main-fp
+	transition 300ms
+	margin-right auto
+	
+	+media-breakpoint-up(md)
+		fixed top 0 left 0
+		z-index $zindex-menu-main-fp
+		display flex
+		align-items center
+		height 100% 
+		width 100% 
+		padding-left 12%
+		transform translateX(-64px) scale(1.2)
+		visibility hidden
+		opacity 0
+		filter blur(50px)
+			
+		.header-fp__menu-wrap.menu-visible &
+			left 0
+			transform none
+			visibility visible
+			opacity 1
+			filter none
+				
+
+	ul
+		+media-breakpoint-up(md)
+			flex-direction column
+			
+
+	&__item
+		transition 300ms

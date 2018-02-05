@@ -1,0 +1,17 @@
+.menu-sidebar-fp
+	transition 300ms
+		
+	+media-breakpoint-up(md)
+		display block
+		fixed top 50% left 64px
+		transform translateY(-50%) 
+		display none
+
+	+media-breakpoint-up(xl)
+		display block
+		fixed top 50% left 64px
+		transform translateY(-50%) 
+		
+	&.menu-visible
+		opacity 0.1
+		filter blur(5px)

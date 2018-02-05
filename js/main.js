@@ -127,12 +127,19 @@ var site = {
 	},
 
 	__fullPageInit: function () {
-		$('#fullpage').fullpage({
-			// anchors: ['pg-card', 'pg-about', 'pg-network', 'pg-contacts', 'pg-consult'],
-			// menu: '#footer-menu',
+		
+		if (this.length === 0) 
+			return;
+
+		$('#main').fullpage({
+			sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE'],
+			anchors: ['section-1', 'section-2', 'section-3'],
+			menu: '#sidebar-menu',
 			verticalCentered: false,
 			navigation: true,
 			navigationPosition: 'right',
+			responsiveWidth: 601,
+			responsiveHeight: 480,
 			// scrollBar: true,
 			// scrollOverflow:true,
 
@@ -142,12 +149,24 @@ var site = {
 
 		});	
 	},
+
+	__menuMainFPToggle: function () {
+		$('.menu-toggle_js').click(function() {
+			
+			$(this).toggleClass('menu-visible');
+			$('.header-fp__menu-wrap').toggleClass('menu-visible');
+			$('.menu-sidebar-fp').toggleClass('menu-visible');
+			$('#main').toggleClass('menu-visible');
+
+		});
+	},
 };
 
 site.init = function () {
 	site.__pseudoSelect();
 	site.__rangeInput();
-	site.__fullPageInit();
+	site.__fullPageInit.call( document.querySelector('#main') );
+	site.__menuMainFPToggle();
 };
 
 $(function () {

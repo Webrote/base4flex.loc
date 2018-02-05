@@ -1,0 +1,8 @@
+//- Навигация по секциям на странице fullpage
+mixin fp-menu-sidebar()
+	nav.nav(class="menu-sidebar-fp")
+		ul#sidebar-menu
+			each menu_item, index in menu_sidebar
+				li(data-menuanchor="section-" + (index + 1))
+					a(href="#section-" + (index + 1)) #{menu_item}
+				

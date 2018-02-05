@@ -2,6 +2,7 @@
 //- Самый главный шаблон Главной станицы
 //-
 
+include ../var/variables.jade
 include ../mixins/mixins.jade
 
 block variables
@@ -33,7 +34,7 @@ html(class="")
 			
 		//- +menu-toggle()
 		//- Header
-		//- +header()
+		+fp-header()
 
 		//- Block Wrapper, to wrapp main content
 		//- such as 'sidebar', 'content'

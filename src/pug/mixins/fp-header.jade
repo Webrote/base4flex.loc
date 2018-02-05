@@ -1,0 +1,16 @@
+//- Шапка на странице fullpage
+mixin fp-header()
+	header.header-fp
+		.header-fp__burger
+			+burger()
+
+		.header-fp__logo
+			a.logo(href="") Logo
+
+		.header-fp__menu-wrap
+	
+			//- Главное меню
+			+fp-menu-main()
+			
+			//- боковое меню по секциям
+			+fp-menu-sidebar()#menu-sidebar

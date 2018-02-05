@@ -12,26 +12,90 @@
     <link href="css/main.css" rel="stylesheet">
   </head>
   <body>
-    <div class="fullpage" id="fullpage">
-      <section class="section section_one fullpage__item">
+    <header class="header-fp">
+      <div class="header-fp__burger">
+        <div class="burger menu-toggle_js"><span></span><span></span><span></span></div>
+      </div>
+      <div class="header-fp__logo"><a class="logo" href="">Logo</a></div>
+      <div class="header-fp__menu-wrap">
+        <nav class="nav menu-main-fp">
+          <ul>
+            <li class="menu-main-fp__item"><a href="">О компании</a></li>
+            <li class="menu-main-fp__item"><a href="">Сотрудничество</a></li>
+            <li class="menu-main-fp__item"><a href="">Оплата и доставка</a></li>
+            <li class="menu-main-fp__item"><a href="">Новости</a></li>
+            <li class="menu-main-fp__item"><a href="">Контакты</a></li>
+          </ul>
+        </nav>
+        <nav class="nav menu-sidebar-fp">
+          <ul id="sidebar-menu">
+            <li data-menuanchor="section-1"><a href="#section-1">Section 1</a></li>
+            <li data-menuanchor="section-2"><a href="#section-2">Section 2</a></li>
+            <li data-menuanchor="section-3"><a href="#section-3">Section 3</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="main-fp" id="main">
+      <section class="section section_one fullpage__item" data-anchor="section-1">
         <div class="section__wrap">
-          <h2>Page ONE</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum recusandae, at pariatur ex dolorum. Nam beatae pariatur enim aut delectus voluptatum, nesciunt ad. Consequatur dolores error et, quidem, fugit repellendus!</p>
+          <div class="section__content animate">
+            <div class="section__title">
+              <h2 class="animate-2">Page ONE</h2>
+            </div>
+            <div class="section__desc animate-3">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum recusandae, at pariatur ex dolorum. Nam beatae pariatur enim aut delectus voluptatum, nesciunt ad. Consequatur dolores error et, quidem, fugit repellendus!</p>
+            </div>
+          </div>
         </div>
       </section>
-      <section class="section section_two fullpage__item">
+      <section class="section section_two fullpage__item" data-anchor="section-2">
         <div class="section__wrap">
-          <h2>Page TWO</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum recusandae, at pariatur ex dolorum. Nam beatae pariatur enim aut delectus voluptatum, nesciunt ad. Consequatur dolores error et, quidem, fugit repellendus!</p>
+          <div class="section__content animate">
+            <div class="section__title">
+              <h2 class="animate-2">Page TWO</h2>
+            </div>
+            <div class="section__desc fade-1">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum recusandae, at pariatur ex dolorum. Nam beatae pariatur enim aut delectus voluptatum, nesciunt ad. Consequatur dolores error et, quidem, fugit repellendus!</p>
+            </div>
+          </div>
         </div>
       </section>
-      <section class="section section_three fullpage__item">
+      <section class="section section_three fullpage__item" data-anchor="section-3">
         <div class="section__wrap">
-          <h2>Page THREE</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum recusandae, at pariatur ex dolorum. Nam beatae pariatur enim aut delectus voluptatum, nesciunt ad. Consequatur dolores error et, quidem, fugit repellendus!</p>
+          <div class="section__content animate">
+            <div class="section__title">
+              <h2 class="animate-2">Page THREE</h2>
+              <p class="animate-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum recusandae, at pariatur ex dolorum. Nam beatae pariatur enim aut delectus voluptatum, nesciunt ad. Consequatur dolores error et, quidem, fugit repellendus!</p>
+            </div>
+            <div class="row zoomout-1">
+              <div class="col-12 col-md-6 col-lg-6">
+                <div class="media">
+                  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit vitae est quos ducimus, iusto repellendus non quo quis! Omnis, fugiat!</p>
+                </div>
+                <div class="media">
+                  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt id aperiam est, officiis molestias voluptates totam culpa? Illum, vitae, impedit!</p>
+                </div>
+                <div class="media">
+                  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat rem eos minima. Odit itaque blanditiis, quae hic maxime consectetur, illum.</p>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-6">
+                <div class="media">
+                  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore neque molestiae sed unde, alias cupiditate id repellendus voluptatibus a, fugit.</p>
+                </div>
+                <div class="media">
+                  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit dicta facilis, minus quo rerum perspiciatis eos! Tenetur accusantium qui voluptatibus!</p>
+                </div>
+                <div class="media">
+                  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. In debitis quis porro soluta at incidunt repellendus est reprehenderit voluptas repellat.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-    </div>
+    </main>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript" src="libraries/fullpage/jquery.fullpage.min.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>

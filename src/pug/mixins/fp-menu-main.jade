@@ -1,0 +1,7 @@
+//- Главное меню для страницы fullpage
+mixin fp-menu-main()
+	nav.nav(class= "menu-main-fp")
+		ul
+			each menu_item in menu_main
+				li.menu-main-fp__item
+					a(href="") #{menu_item}

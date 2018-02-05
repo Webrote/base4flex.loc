@@ -3,6 +3,8 @@
 	display flex
 	justify-content center
 	align-items center
+	z-index $zindex-section-fp
+	transition 600ms
 	
 	+media-breakpoint-up(md)
 		padding 16px 2rem
@@ -31,3 +33,8 @@
 
 		^[0]_one &
 			text-align center
+			
+
+	.main-fp.menu-visible &
+		opacity 0.5
+		filter blur(5px)

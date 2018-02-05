@@ -1,0 +1,75 @@
+@media (min-width $animate-off-breakpoin)
+
+	.section .animate .animate-1
+	.section .animate .animate-2
+	.section .animate .animate-3
+	.section .animate .animate-4
+		transition 300ms
+		transition-delay 0ms 
+		position relative
+		transform translateY(20px) 
+		opacity 0
+	
+	.section .animate .zoomout-1
+		transition 600ms 
+		transition-delay 0ms 
+		transform scale(1.1)
+		opacity 0
+		
+	.section .animate .fade-1
+	.section .animate .fade-2
+	.section .animate .fade-3
+	.section .animate .fade-4
+		opacity 0
+		transition 600ms 
+		transition-delay 0ms 
+
+
+@media (min-width $animate-off-breakpoin)
+	// ------ translate -----
+	.section.active .animate .animate-1
+		transform none 
+		transition-delay 300ms 
+		opacity 1
+	
+	.section.active .animate .animate-2
+		transform none 
+		transition-delay 500ms 
+		opacity 1
+		
+	.section.active .animate .animate-3
+		transform none 
+		transition-delay 700ms 
+		opacity 1
+		
+	.section.active .animate .animate-4
+		transform none 
+		transition-delay 900ms 
+		opacity 1
+		
+	// ------ zoom -----
+	.section.active .animate .zoomout-1
+		transform none
+		transition-delay 0.3s
+		opacity 1
+		
+	// ------ fade -----
+	.section.active .animate .fade-1
+		opacity 1
+		transform none
+		transition-delay 300ms
+	
+	.section.active .animate .fade-2
+		opacity 1
+		transform none
+		transition-delay 500ms
+		
+	.section.active .animate .fade-3
+		opacity 1
+		transform none
+		transition-delay 700ms
+		
+	.section.active .animate .fade-4
+		opacity 1
+		transform none
+		transition-delay 900ms
