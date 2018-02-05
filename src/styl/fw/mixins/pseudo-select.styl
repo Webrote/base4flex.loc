@@ -1,9 +1,7 @@
 pseudoselect()
 	height $form-control-height
 	line-height $select-lineheight
-	border-style solid 
-	border-width $select-border-width
-	border-color $select-border-color 
+	border $select-border-width solid $select-border-color 
 	background $select-bg 
 	border-radius $select-border-radius
 	color $select-text-color
@@ -12,6 +10,10 @@ pseudoselect()
 	+hover-focus()
 		text-decoration none
 		color $select-text-color
+	+focus()
+		color $select-text-focus-color
+		border-color $select-border-focus-color
+		background-color $select-focus-bg 
 		
 drop()
 	display none
@@ -27,3 +29,17 @@ drop()
 	background-color $drop-bg
 	text-align left
 	overflow-y scroll
+	
+	&.dropdown
+		top $select-height
+		border-top none
+		border-radius 0 0 4px 4px 
+		
+	&.dropup
+		bottom $select-height
+		border-bottom none
+		border-radius 4px 4px 0 0
+		
+	.form__inline &
+		width 'calc(100% -  %s)' %($form-inline-indent * 2)
+		margin-left $form-inline-indent 

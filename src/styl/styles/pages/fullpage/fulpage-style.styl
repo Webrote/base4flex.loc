@@ -1,0 +1,33 @@
+.section
+	position relative
+	display flex
+	justify-content center
+	align-items center
+	
+	+media-breakpoint-up(md)
+		padding 16px 2rem
+		
+	+media-breakpoint-up(lg)
+		padding 0
+		
+	&_one
+		flex-direction column 
+		min-height 640px
+		min-height 90vh
+	
+		
+	&__wrap
+		width 100% 
+		max-width 800px 
+		padding-left ($grid-gutter-width / 2)
+		padding-right ($grid-gutter-width / 2)
+		margin-left auto
+		margin-right auto
+		
+		+media-breakpoint-up(md)
+			padding-left 0
+			padding-right 0
+			
+
+		^[0]_one &
+			text-align center
