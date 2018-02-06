@@ -1,35 +1,38 @@
 mixin menu(menu_class = "menu", isSubmenuShown = false)
 	nav.nav(class= (menu_class))
 		ul
-			li(class= isSubmenuShown ? "nav__has-child" : "" )
-				a(href="") О компании
+			each menu_item in menu_main
+				li
+					a(href=menu_item[1]) #{menu_item[0]}
+			//- li(class= isSubmenuShown ? "nav__has-child" : "" )
+			//- 	a(href="") О компании
 
-				if isSubmenuShown
-					ul.nav__drop
-						li
-							a(href="/simple-text.html") История компании
-						li
-							a(href="/simple-text.html") Вакансии
-						li
-							a(href="/simple-text.html") Наши партнеры
-						li
-							a(href="/simple-text.html") Рекламные материалы
-			li
-				a.active(href="/simple-text.html") Сотрудничество
-			li
-				a(href="") Оплата и доставка
-			li
-				a(href="") Новости
-			li(class= isSubmenuShown ? "nav__has-child" : "" )
-				a(href="") Контакты
+			//- 	if isSubmenuShown
+			//- 		ul.nav__drop
+			//- 			li
+			//- 				a(href="/simple-text.html") История компании
+			//- 			li
+			//- 				a(href="/simple-text.html") Вакансии
+			//- 			li
+			//- 				a(href="/simple-text.html") Наши партнеры
+			//- 			li
+			//- 				a(href="/simple-text.html") Рекламные материалы
+			//- li
+			//- 	a.active(href="/simple-text.html") Сотрудничество
+			//- li
+			//- 	a(href="") Оплата и доставка
+			//- li
+			//- 	a(href="") Новости
+			//- li(class= isSubmenuShown ? "nav__has-child" : "" )
+			//- 	a(href="") Контакты
 
-				if isSubmenuShown
-					ul.nav__drop
-						li
-							a(href="/simple-text.html") История компании
-						li
-							a(href="/simple-text.html") Вакансии
-						li
-							a(href="/simple-text.html") Наши партнеры
-						li
-							a(href="/simple-text.html") Рекламные материалы
+			//- 	if isSubmenuShown
+			//- 		ul.nav__drop
+			//- 			li
+			//- 				a(href="/simple-text.html") История компании
+			//- 			li
+			//- 				a(href="/simple-text.html") Вакансии
+			//- 			li
+			//- 				a(href="/simple-text.html") Наши партнеры
+			//- 			li
+			//- 				a(href="/simple-text.html") Рекламные материалы
