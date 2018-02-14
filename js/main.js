@@ -1,8 +1,8 @@
-'use strict';
 /*=============
  * Site scripts
  ==============*/
-var windowW = $(window).width(),
+var _window = $(window),
+	windowWidth = _window.width(),
 	openMenu = false;
 
 var site = {
@@ -93,16 +93,6 @@ var site = {
 			$(this).attr('title', $(this).text());
 		});
 		// Скрываем все выпадающие списки при нажатии во вне
-
-		// $('.js-pseudoselect').blur(function(event) {
-
-		// 	$(this).removeClass('active');
-		// 	$(this).siblings('.js-drop').slideUp(100, function () {
-		// 		$(this).removeClass('dropdown dropup');
-		// 	});
-
-		// });
-
 		$('body').click(function() {
 			$('.js-drop').each(function() {
 				if ($(this).is(':visible')) {
@@ -127,7 +117,7 @@ var site = {
 	},
 
 	__fullPageInit: function () {
-		
+
 		if (this.length === 0) 
 			return;
 
@@ -147,7 +137,31 @@ var site = {
 			// 	fullpageInit = true;
 			// },
 
+			afterRender: function () {
+				// console.log('after Render');
+			},
+			afterResize: function () {
+				// console.log('resize');
+				// $.fn.fullpage.reBuild();
+			},
+			onLeave: function (index, nextIndex, direction) {
+				// console.log('On leave!', 'index: ', index, '; nextIndex: ',nextIndex, '; direction: ', direction);
+				// if(nextIndex == 3){
+				// 	return false;
+				// }
+			},
+			afterLoad: function (anchorLink, index) {
+				// console.log('after Load!', 'anchorLink: ', anchorLink, ', index: ', index);
+			},
+
 		});	
+
+		_window.on('resize', function() {
+			
+			$.fn.fullpage.reBuild();
+			
+		});
+
 	},
 
 	__menuMainFPToggle: function () {
