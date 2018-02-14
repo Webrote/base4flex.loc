@@ -2,21 +2,24 @@ mixin header()
 	header.header
 		.header__burger
 			+burger()
-		.header__top
-			.container
-								
-				.header__contacts.header__inline
+
+		.container
+			.row
+				.col
 					.header__phone
 						a.phone(href="") 8-800-800-80-80
+				.col
 					.header__email
 						a.email(href="mailto:base@base.ru") base@base.loc
+				.col
 					.header__feedback
 						a.feedback(href="") Обратный звонок
 
-				.header__search.header__inline
-					form.search(action="")
-						input(type="text", placeholder="Поиск по сайту")
-						button(type="submit")
+				.col
+					.header__search.header__inline
+						form.search(action="")
+							input(type="text", placeholder="Поиск по сайту")
+							button(type="submit")
 
 
 		

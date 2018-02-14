@@ -2157,6 +2157,10 @@ select.form__control:focus::-ms-value {
 .breadcrumb__inline {
   display: inline-block;
 }
+.pager-wrap {
+  text-align: center;
+  margin: 25px 0 20px;
+}
 .pager {
   display: inline-block;
   padding-left: 0;
@@ -2181,9 +2185,7 @@ select.form__control:focus::-ms-value {
   transition: all ease-in-out 200ms 0ms;
 }
 .pager > li > a:hover,
-.pager > li > span:hover,
-.pager > li > a:focus,
-.pager > li > span:focus {
+.pager > li > a:focus {
   z-index: 2;
   color: #22527b;
   background-color: #fefefe;
@@ -2199,6 +2201,9 @@ select.form__control:focus::-ms-value {
   color: #fff;
   background-color: #aaa;
   border-color: #ccc;
+  cursor: default;
+}
+.pager > .pager-dots > span {
   cursor: default;
 }
 .clearfix::after {
@@ -3588,27 +3593,6 @@ textarea:focus:-ms-input-placeholder {
 .header {
   position: relative;
 }
-.header__inline {
-  display: inline-block;
-  vertical-align: middle;
-}
-.header__b {
-  display: block;
-}
-.header__burger {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-       -o-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-@media (min-width: 768px) {
-  .header__burger {
-    display: none;
-  }
-}
 .footer {
   padding-top: 25px;
   background-color: #232629;
@@ -3706,11 +3690,20 @@ textarea:focus:-ms-input-placeholder {
   transition: all 0ms;
 }
 .burger {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  z-index: 1000;
   width: 40px;
   height: 25px;
   cursor: pointer;
   text-align: right;
   font-size: 0;
+}
+@media (min-width: 768px) {
+  .burger {
+    display: none;
+  }
 }
 .burger span {
   display: inline-block;
